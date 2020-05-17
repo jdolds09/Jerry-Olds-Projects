@@ -1,0 +1,8 @@
+BLOCK (2)
+  READ (1)
+    'fred'
+  READ (4)
+    'fred'
+    'wilma'
+    'barney'
+    'betty'

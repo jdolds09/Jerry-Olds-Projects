@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jerry_Olds_Quiz05_1", "Jerry_Olds_Quiz05_1\Jerry_Olds_Quiz05_1.vcxproj", "{1025E486-3E71-4C4A-9BE4-D9B0F5C6F333}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1025E486-3E71-4C4A-9BE4-D9B0F5C6F333}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1025E486-3E71-4C4A-9BE4-D9B0F5C6F333}.Debug|Win32.Build.0 = Debug|Win32
+		{1025E486-3E71-4C4A-9BE4-D9B0F5C6F333}.Release|Win32.ActiveCfg = Release|Win32
+		{1025E486-3E71-4C4A-9BE4-D9B0F5C6F333}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,36 @@
+BRACES
+type function_name()
+{
+
+}
+
+WHITESPACE
+	tab
+
+COMMENTS
+// Comment a tab before block of code
+	if(bool)
+        {
+
+        }
+
+FUNCTION PLACEMENT
+int main()
+{
+
+}
+
+// Functions below main
+type function_name()
+{
+	
+}
+
+VARIABLE NAMING
+// Underscore between every word, no camelcase
+	int database_name;
+
+ONE LINE CONDITIONAL
+// No braces with one line conditionals
+	if(bool)
+		statement;

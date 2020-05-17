@@ -1,0 +1,13 @@
+# TSN #
+
+Steps to build:
+
+```
+make
+```
+
+Steps to run:
+
+```
+./tsn
+```

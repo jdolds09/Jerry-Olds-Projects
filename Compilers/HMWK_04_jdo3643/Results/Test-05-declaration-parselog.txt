@@ -1,0 +1,384 @@
+    lex.py: 924:lex: tokens   = ['INTEGER_LITERAL', 'REAL_LITERAL', 'STRING_LITERAL', 'ID', 'LPAREN', 'RPAREN', 'SEMICOLON', 'COMMA', 'AND_BITWISE', 'ASSIGN', 'DIVIDE', 'EQUAL', 'EXPONENTIATION', 'FACTORIAL', 'GREATER', 'GREATER_EQUAL', 'LESS', 'LESS_EQUAL', 'MINUS', 'MODULUS', 'MULTIPLY', 'NOT_BITWISE', 'NOT_EQUAL', 'OR_BITWISE', 'PLUS', 'RANDOM', 'SQUARE_ROOT', 'XOR_BITWISE', 'AND_LOGICAL', 'OR_LOGICAL', 'NOT_LOGICAL', 'EXIT', 'IF', 'THEN', 'ELSE', 'END', 'WHILE', 'DO', 'BREAK', 'CONTINUE', 'READ', 'WRITE', 'INT', 'REAL']
+    lex.py: 925:lex: literals = ''
+    lex.py: 926:lex: states   = {'INITIAL': 'inclusive'}
+    lex.py: 953:lex: Adding rule t_ID -> '[_a-zA-Z][_a-zA-Z0-9]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_REAL_LITERAL -> '(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_INTEGER_LITERAL -> '(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_STRING_LITERAL -> '"[^"
+]*"' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_comment -> '@[^
+]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_newline -> '\n+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EQUAL -> '==' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER_EQUAL -> '>=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS_EQUAL -> '<=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_EQUAL -> '<>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EXPONENTIATION -> '\^' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MULTIPLY -> '\*' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_OR_BITWISE -> '\|' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_PLUS -> '\+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RANDOM -> '\?' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SQUARE_ROOT -> '\$' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_XOR_BITWISE -> '\#' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LPAREN -> '\(' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RPAREN -> '\)' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_AND_BITWISE -> '&' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_ASSIGN -> '=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_DIVIDE -> '/' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_FACTORIAL -> '!' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER -> '>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS -> '<' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MINUS -> '-' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MODULUS -> '%' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_BITWISE -> '~' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_COMMA -> ',' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SEMICOLON -> ';' (state 'INITIAL')
+    lex.py: 966:lex: ==== MASTER REGEXS FOLLOW ====
+    lex.py: 975:lex: state 'INITIAL' : regex[0] = '(?P<t_ID>[_a-zA-Z][_a-zA-Z0-9]*)|(?P<t_REAL_LITERAL>(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?))|(?P<t_INTEGER_LITERAL>(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+))|(?P<t_STRING_LITERAL>"[^"
+]*")|(?P<t_comment>@[^
+]*)|(?P<t_newline>\n+)|(?P<t_EQUAL>==)|(?P<t_GREATER_EQUAL>>=)|(?P<t_LESS_EQUAL><=)|(?P<t_NOT_EQUAL><>)|(?P<t_EXPONENTIATION>\^)|(?P<t_MULTIPLY>\*)|(?P<t_OR_BITWISE>\|)|(?P<t_PLUS>\+)|(?P<t_RANDOM>\?)|(?P<t_SQUARE_ROOT>\$)|(?P<t_XOR_BITWISE>\#)|(?P<t_LPAREN>\()|(?P<t_RPAREN>\))|(?P<t_AND_BITWISE>&)|(?P<t_ASSIGN>=)|(?P<t_DIVIDE>/)|(?P<t_FACTORIAL>!)|(?P<t_GREATER>>)|(?P<t_LESS><)|(?P<t_MINUS>-)|(?P<t_MODULUS>%)|(?P<t_NOT_BITWISE>~)|(?P<t_COMMA>,)|(?P<t_SEMICOLON>;)'
+   yacc.py: 362:PLY: PARSE DEBUG START
+   yacc.py: 410:
+   yacc.py: 411:State  : 0
+   yacc.py: 435:Stack  : . LexToken(INT,'int',6,103)
+   yacc.py: 445:Action : Shift and goto state 9
+   yacc.py: 410:
+   yacc.py: 411:State  : 9
+   yacc.py: 435:Stack  : INT . LexToken(ID,'a',6,107)
+   yacc.py: 445:Action : Shift and goto state 18
+   yacc.py: 410:
+   yacc.py: 411:State  : 18
+   yacc.py: 435:Stack  : INT ID . LexToken(SEMICOLON,';',6,108)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 37
+   yacc.py: 548:Result : <NoneType @ 0x55eb436bdf70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 37
+   yacc.py: 435:Stack  : INT ID epsilon . LexToken(SEMICOLON,';',6,108)
+   yacc.py: 471:Action : Reduce rule [initializer_opt -> epsilon] with [None] and goto state 36
+   yacc.py: 506:Result : <NoneType @ 0x55eb436bdf70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 36
+   yacc.py: 435:Stack  : INT ID initializer_opt . LexToken(SEMICOLON,';',6,108)
+   yacc.py: 471:Action : Reduce rule [statement -> INT ID initializer_opt] with ['int','a',None] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2b4a10> (('DECLARATION', 'INT', 'a', ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement . LexToken(SEMICOLON,';',6,108)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7fa12f2b4a10>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',6,108)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(REAL,'real',8,111)
+   yacc.py: 445:Action : Shift and goto state 10
+   yacc.py: 410:
+   yacc.py: 411:State  : 10
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL . LexToken(ID,'b',8,116)
+   yacc.py: 445:Action : Shift and goto state 19
+   yacc.py: 410:
+   yacc.py: 411:State  : 19
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID . LexToken(SEMICOLON,';',8,117)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 37
+   yacc.py: 548:Result : <NoneType @ 0x55eb436bdf70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 37
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID epsilon . LexToken(SEMICOLON,';',8,117)
+   yacc.py: 471:Action : Reduce rule [initializer_opt -> epsilon] with [None] and goto state 39
+   yacc.py: 506:Result : <NoneType @ 0x55eb436bdf70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 39
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID initializer_opt . LexToken(SEMICOLON,';',8,117)
+   yacc.py: 471:Action : Reduce rule [statement -> REAL ID initializer_opt] with ['real','b',None] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7fa12f255230> (('DECLARATION', 'REAL', 'b', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',8,117)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7fa12f25e640>,';',<tuple @ 0x7fa12f255230>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',8,117)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(INT,'int',10,120)
+   yacc.py: 445:Action : Shift and goto state 9
+   yacc.py: 410:
+   yacc.py: 411:State  : 9
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT . LexToken(ID,'c',10,124)
+   yacc.py: 445:Action : Shift and goto state 18
+   yacc.py: 410:
+   yacc.py: 411:State  : 18
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID . LexToken(ASSIGN,'=',10,126)
+   yacc.py: 445:Action : Shift and goto state 38
+   yacc.py: 410:
+   yacc.py: 411:State  : 38
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN . LexToken(INTEGER_LITERAL,17,10,128)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN INTEGER_LITERAL . LexToken(SEMICOLON,';',10,130)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [17] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7fa12f24e2d0> (('LITERAL', 'INT', 17))
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression . LexToken(SEMICOLON,';',10,130)
+   yacc.py: 471:Action : Reduce rule [initializer_opt -> ASSIGN expression] with ['=',<tuple @ 0x7fa12f24e2d0>] and goto state 36
+   yacc.py: 506:Result : <tuple @ 0x7fa12f24e2d0> (('LITERAL', 'INT', 17))
+   yacc.py: 410:
+   yacc.py: 411:State  : 36
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID initializer_opt . LexToken(SEMICOLON,';',10,130)
+   yacc.py: 471:Action : Reduce rule [statement -> INT ID initializer_opt] with ['int','c',<tuple @ 0x7fa12f24e2d0>] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2eea10> (('DECLARATION', 'INT', 'c', ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',10,130)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7fa12f25e640>,';',<tuple @ 0x7fa12f2eea10>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',10,130)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(REAL,'real',12,133)
+   yacc.py: 445:Action : Shift and goto state 10
+   yacc.py: 410:
+   yacc.py: 411:State  : 10
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL . LexToken(ID,'d',12,138)
+   yacc.py: 445:Action : Shift and goto state 19
+   yacc.py: 410:
+   yacc.py: 411:State  : 19
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID . LexToken(ASSIGN,'=',12,140)
+   yacc.py: 445:Action : Shift and goto state 38
+   yacc.py: 410:
+   yacc.py: 411:State  : 38
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN . LexToken(REAL_LITERAL,3.14159,12,142)
+   yacc.py: 445:Action : Shift and goto state 27
+   yacc.py: 410:
+   yacc.py: 411:State  : 27
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN REAL_LITERAL . LexToken(SEMICOLON,';',12,149)
+   yacc.py: 471:Action : Reduce rule [expression -> REAL_LITERAL] with [3.14159] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7fa12f24e280> (('LITERAL', 'REAL', 3.14159))
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression . LexToken(SEMICOLON,';',12,149)
+   yacc.py: 471:Action : Reduce rule [initializer_opt -> ASSIGN expression] with ['=',<tuple @ 0x7fa12f24e280>] and goto state 39
+   yacc.py: 506:Result : <tuple @ 0x7fa12f24e280> (('LITERAL', 'REAL', 3.14159))
+   yacc.py: 410:
+   yacc.py: 411:State  : 39
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID initializer_opt . LexToken(SEMICOLON,';',12,149)
+   yacc.py: 471:Action : Reduce rule [statement -> REAL ID initializer_opt] with ['real','d',<tuple @ 0x7fa12f24e280>] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2551d0> (('DECLARATION', 'REAL', 'd', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',12,149)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7fa12f25e640>,';',<tuple @ 0x7fa12f2551d0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',12,149)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(INT,'int',14,152)
+   yacc.py: 445:Action : Shift and goto state 9
+   yacc.py: 410:
+   yacc.py: 411:State  : 9
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT . LexToken(ID,'e',14,156)
+   yacc.py: 445:Action : Shift and goto state 18
+   yacc.py: 410:
+   yacc.py: 411:State  : 18
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID . LexToken(ASSIGN,'=',14,158)
+   yacc.py: 445:Action : Shift and goto state 38
+   yacc.py: 410:
+   yacc.py: 411:State  : 38
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN . LexToken(INTEGER_LITERAL,1,14,160)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN INTEGER_LITERAL . LexToken(PLUS,'+',14,161)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [1] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7fa12f24e410> (('LITERAL', 'INT', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression . LexToken(PLUS,'+',14,161)
+   yacc.py: 445:Action : Shift and goto state 55
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS . LexToken(INTEGER_LITERAL,2,14,162)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS INTEGER_LITERAL . LexToken(MULTIPLY,'*',14,163)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [2] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7fa12f254050> (('LITERAL', 'INT', 2))
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression . LexToken(MULTIPLY,'*',14,163)
+   yacc.py: 445:Action : Shift and goto state 51
+   yacc.py: 410:
+   yacc.py: 411:State  : 51
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression MULTIPLY . LexToken(INTEGER_LITERAL,3,14,164)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression MULTIPLY INTEGER_LITERAL . LexToken(DIVIDE,'/',14,165)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [3] and goto state 85
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2546e0> (('LITERAL', 'INT', 3))
+   yacc.py: 410:
+   yacc.py: 411:State  : 85
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression MULTIPLY expression . LexToken(DIVIDE,'/',14,165)
+   yacc.py: 471:Action : Reduce rule [expression -> expression MULTIPLY expression] with [<tuple @ 0x7fa12f254050>,'*',<tuple @ 0x7fa12f2546e0>] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2a9950> (('BINOP', '*', ('LITERAL', 'INT', 2), (' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression . LexToken(DIVIDE,'/',14,165)
+   yacc.py: 445:Action : Shift and goto state 42
+   yacc.py: 410:
+   yacc.py: 411:State  : 42
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression DIVIDE . LexToken(INTEGER_LITERAL,4,14,166)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression DIVIDE INTEGER_LITERAL . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [4] and goto state 76
+   yacc.py: 506:Result : <tuple @ 0x7fa12f254eb0> (('LITERAL', 'INT', 4))
+   yacc.py: 410:
+   yacc.py: 411:State  : 76
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression DIVIDE expression . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 471:Action : Reduce rule [expression -> expression DIVIDE expression] with [<tuple @ 0x7fa12f2a9950>,'/',<tuple @ 0x7fa12f254eb0>] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7fa12f3051d0> (('BINOP', '/', ('BINOP', '*', ('LITERAL' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression PLUS expression . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 471:Action : Reduce rule [expression -> expression PLUS expression] with [<tuple @ 0x7fa12f24e410>,'+',<tuple @ 0x7fa12f3051d0>] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2b49b0> (('BINOP', '+', ('LITERAL', 'INT', 1), (' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID ASSIGN expression . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 471:Action : Reduce rule [initializer_opt -> ASSIGN expression] with ['=',<tuple @ 0x7fa12f2b49b0>] and goto state 36
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2b49b0> (('BINOP', '+', ('LITERAL', 'INT', 1), (' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 36
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON INT ID initializer_opt . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 471:Action : Reduce rule [statement -> INT ID initializer_opt] with ['int','e',<tuple @ 0x7fa12f2b49b0>] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2b48f0> (('DECLARATION', 'INT', 'e', ('BINOP', '+ ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7fa12f25e640>,';',<tuple @ 0x7fa12f2b48f0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',14,167)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(REAL,'real',16,170)
+   yacc.py: 445:Action : Shift and goto state 10
+   yacc.py: 410:
+   yacc.py: 411:State  : 10
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL . LexToken(ID,'f',16,175)
+   yacc.py: 445:Action : Shift and goto state 19
+   yacc.py: 410:
+   yacc.py: 411:State  : 19
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID . LexToken(ASSIGN,'=',16,177)
+   yacc.py: 445:Action : Shift and goto state 38
+   yacc.py: 410:
+   yacc.py: 411:State  : 38
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN . LexToken(REAL_LITERAL,6.7,16,179)
+   yacc.py: 445:Action : Shift and goto state 27
+   yacc.py: 410:
+   yacc.py: 411:State  : 27
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN REAL_LITERAL . LexToken(PLUS,'+',16,182)
+   yacc.py: 471:Action : Reduce rule [expression -> REAL_LITERAL] with [6.7] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7fa12f254be0> (('LITERAL', 'REAL', 6.7))
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression . LexToken(PLUS,'+',16,182)
+   yacc.py: 445:Action : Shift and goto state 55
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS . LexToken(REAL_LITERAL,8.9,16,183)
+   yacc.py: 445:Action : Shift and goto state 27
+   yacc.py: 410:
+   yacc.py: 411:State  : 27
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS REAL_LITERAL . LexToken(MULTIPLY,'*',16,186)
+   yacc.py: 471:Action : Reduce rule [expression -> REAL_LITERAL] with [8.9] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7fa12f254c80> (('LITERAL', 'REAL', 8.9))
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression . LexToken(MULTIPLY,'*',16,186)
+   yacc.py: 445:Action : Shift and goto state 51
+   yacc.py: 410:
+   yacc.py: 411:State  : 51
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression MULTIPLY . LexToken(REAL_LITERAL,0.1,16,187)
+   yacc.py: 445:Action : Shift and goto state 27
+   yacc.py: 410:
+   yacc.py: 411:State  : 27
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression MULTIPLY REAL_LITERAL . LexToken(DIVIDE,'/',16,190)
+   yacc.py: 471:Action : Reduce rule [expression -> REAL_LITERAL] with [0.1] and goto state 85
+   yacc.py: 506:Result : <tuple @ 0x7fa12f256640> (('LITERAL', 'REAL', 0.1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 85
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression MULTIPLY expression . LexToken(DIVIDE,'/',16,190)
+   yacc.py: 471:Action : Reduce rule [expression -> expression MULTIPLY expression] with [<tuple @ 0x7fa12f254c80>,'*',<tuple @ 0x7fa12f256640>] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2b4950> (('BINOP', '*', ('LITERAL', 'REAL', 8.9), ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression . LexToken(DIVIDE,'/',16,190)
+   yacc.py: 445:Action : Shift and goto state 42
+   yacc.py: 410:
+   yacc.py: 411:State  : 42
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression DIVIDE . LexToken(REAL_LITERAL,2.3,16,191)
+   yacc.py: 445:Action : Shift and goto state 27
+   yacc.py: 410:
+   yacc.py: 411:State  : 27
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression DIVIDE REAL_LITERAL . $end
+   yacc.py: 471:Action : Reduce rule [expression -> REAL_LITERAL] with [2.3] and goto state 76
+   yacc.py: 506:Result : <tuple @ 0x7fa12f256b40> (('LITERAL', 'REAL', 2.3))
+   yacc.py: 410:
+   yacc.py: 411:State  : 76
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression DIVIDE expression . $end
+   yacc.py: 471:Action : Reduce rule [expression -> expression DIVIDE expression] with [<tuple @ 0x7fa12f2b4950>,'/',<tuple @ 0x7fa12f256b40>] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7fa12f255410> (('BINOP', '/', ('BINOP', '*', ('LITERAL' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression PLUS expression . $end
+   yacc.py: 471:Action : Reduce rule [expression -> expression PLUS expression] with [<tuple @ 0x7fa12f254be0>,'+',<tuple @ 0x7fa12f255410>] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7fa12f255290> (('BINOP', '+', ('LITERAL', 'REAL', 6.7), ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID ASSIGN expression . $end
+   yacc.py: 471:Action : Reduce rule [initializer_opt -> ASSIGN expression] with ['=',<tuple @ 0x7fa12f255290>] and goto state 39
+   yacc.py: 506:Result : <tuple @ 0x7fa12f255290> (('BINOP', '+', ('LITERAL', 'REAL', 6.7), ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 39
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON REAL ID initializer_opt . $end
+   yacc.py: 471:Action : Reduce rule [statement -> REAL ID initializer_opt] with ['real','f',<tuple @ 0x7fa12f255290>] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2552f0> (('DECLARATION', 'REAL', 'f', ('BINOP', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . $end
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7fa12f25e640>,';',<tuple @ 0x7fa12f2552f0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . $end
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7fa12f25e640>] and goto state 2
+   yacc.py: 506:Result : <list @ 0x7fa12f25e640> ([('DECLARATION', 'INT', 'a', ('LITERAL', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 2
+   yacc.py: 430:Defaulted state 2: Reduce using 1
+   yacc.py: 435:Stack  : statement_list . $end
+   yacc.py: 471:Action : Reduce rule [program -> statement_list] with [<list @ 0x7fa12f25e640>] and goto state 1
+   yacc.py: 506:Result : <tuple @ 0x7fa12f2a8820> (('BLOCK', [('DECLARATION', 'INT', 'a', ( ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 1
+   yacc.py: 435:Stack  : program . $end
+   yacc.py: 571:Done   : Returning <tuple @ 0x7fa12f2a8820> (('BLOCK', [('DECLARATION', 'INT', 'a', ( ...)
+   yacc.py: 572:PLY: PARSE DEBUG END

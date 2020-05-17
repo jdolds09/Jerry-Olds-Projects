@@ -1,0 +1,10 @@
+BLOCK (1)
+  WHILE
+    BINOP '<'
+      ID 'a'
+      ID 'b'
+    BLOCK (1)
+      ASSIGN 'a'
+        BINOP '+'
+          ID 'a'
+          LITERAL 'INT', 1

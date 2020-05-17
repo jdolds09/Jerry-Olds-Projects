@@ -1,0 +1,161 @@
+    lex.py: 924:lex: tokens   = ['INTEGER_LITERAL', 'REAL_LITERAL', 'STRING_LITERAL', 'ID', 'LPAREN', 'RPAREN', 'SEMICOLON', 'COMMA', 'AND_BITWISE', 'ASSIGN', 'DIVIDE', 'EQUAL', 'EXPONENTIATION', 'FACTORIAL', 'GREATER', 'GREATER_EQUAL', 'LESS', 'LESS_EQUAL', 'MINUS', 'MODULUS', 'MULTIPLY', 'NOT_BITWISE', 'NOT_EQUAL', 'OR_BITWISE', 'PLUS', 'RANDOM', 'SQUARE_ROOT', 'XOR_BITWISE', 'AND_LOGICAL', 'OR_LOGICAL', 'NOT_LOGICAL', 'EXIT', 'IF', 'THEN', 'ELSE', 'END', 'WHILE', 'DO', 'BREAK', 'CONTINUE', 'READ', 'WRITE', 'INT', 'REAL']
+    lex.py: 925:lex: literals = ''
+    lex.py: 926:lex: states   = {'INITIAL': 'inclusive'}
+    lex.py: 953:lex: Adding rule t_ID -> '[_a-zA-Z][_a-zA-Z0-9]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_REAL_LITERAL -> '(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_INTEGER_LITERAL -> '(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_STRING_LITERAL -> '"[^"
+]*"' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_comment -> '@[^
+]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_newline -> '\n+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EQUAL -> '==' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER_EQUAL -> '>=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS_EQUAL -> '<=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_EQUAL -> '<>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EXPONENTIATION -> '\^' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MULTIPLY -> '\*' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_OR_BITWISE -> '\|' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_PLUS -> '\+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RANDOM -> '\?' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SQUARE_ROOT -> '\$' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_XOR_BITWISE -> '\#' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LPAREN -> '\(' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RPAREN -> '\)' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_AND_BITWISE -> '&' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_ASSIGN -> '=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_DIVIDE -> '/' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_FACTORIAL -> '!' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER -> '>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS -> '<' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MINUS -> '-' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MODULUS -> '%' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_BITWISE -> '~' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_COMMA -> ',' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SEMICOLON -> ';' (state 'INITIAL')
+    lex.py: 966:lex: ==== MASTER REGEXS FOLLOW ====
+    lex.py: 975:lex: state 'INITIAL' : regex[0] = '(?P<t_ID>[_a-zA-Z][_a-zA-Z0-9]*)|(?P<t_REAL_LITERAL>(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?))|(?P<t_INTEGER_LITERAL>(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+))|(?P<t_STRING_LITERAL>"[^"
+]*")|(?P<t_comment>@[^
+]*)|(?P<t_newline>\n+)|(?P<t_EQUAL>==)|(?P<t_GREATER_EQUAL>>=)|(?P<t_LESS_EQUAL><=)|(?P<t_NOT_EQUAL><>)|(?P<t_EXPONENTIATION>\^)|(?P<t_MULTIPLY>\*)|(?P<t_OR_BITWISE>\|)|(?P<t_PLUS>\+)|(?P<t_RANDOM>\?)|(?P<t_SQUARE_ROOT>\$)|(?P<t_XOR_BITWISE>\#)|(?P<t_LPAREN>\()|(?P<t_RPAREN>\))|(?P<t_AND_BITWISE>&)|(?P<t_ASSIGN>=)|(?P<t_DIVIDE>/)|(?P<t_FACTORIAL>!)|(?P<t_GREATER>>)|(?P<t_LESS><)|(?P<t_MINUS>-)|(?P<t_MODULUS>%)|(?P<t_NOT_BITWISE>~)|(?P<t_COMMA>,)|(?P<t_SEMICOLON>;)'
+   yacc.py: 362:PLY: PARSE DEBUG START
+   yacc.py: 410:
+   yacc.py: 411:State  : 0
+   yacc.py: 435:Stack  : . LexToken(READ,'read',6,103)
+   yacc.py: 445:Action : Shift and goto state 13
+   yacc.py: 410:
+   yacc.py: 411:State  : 13
+   yacc.py: 435:Stack  : READ . LexToken(LPAREN,'(',6,107)
+   yacc.py: 445:Action : Shift and goto state 31
+   yacc.py: 410:
+   yacc.py: 411:State  : 31
+   yacc.py: 435:Stack  : READ LPAREN . LexToken(ID,'fred',6,109)
+   yacc.py: 445:Action : Shift and goto state 67
+   yacc.py: 410:
+   yacc.py: 411:State  : 67
+   yacc.py: 435:Stack  : READ LPAREN ID . LexToken(RPAREN,')',6,114)
+   yacc.py: 471:Action : Reduce rule [id_list -> ID] with ['fred'] and goto state 66
+   yacc.py: 506:Result : <list @ 0x7f7689925230> (['fred'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 66
+   yacc.py: 435:Stack  : READ LPAREN id_list . LexToken(RPAREN,')',6,114)
+   yacc.py: 445:Action : Shift and goto state 94
+   yacc.py: 410:
+   yacc.py: 411:State  : 94
+   yacc.py: 435:Stack  : READ LPAREN id_list RPAREN . LexToken(SEMICOLON,';',6,115)
+   yacc.py: 471:Action : Reduce rule [statement -> READ LPAREN id_list RPAREN] with ['read','(',['fred'],')'] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f7689971730> (('READ', ['fred']))
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement . LexToken(SEMICOLON,';',6,115)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f7689971730>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f7689925730> ([('READ', ['fred'])])
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',6,115)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(READ,'read',8,118)
+   yacc.py: 445:Action : Shift and goto state 13
+   yacc.py: 410:
+   yacc.py: 411:State  : 13
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ . LexToken(LPAREN,'(',8,122)
+   yacc.py: 445:Action : Shift and goto state 31
+   yacc.py: 410:
+   yacc.py: 411:State  : 31
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN . LexToken(ID,'fred',8,124)
+   yacc.py: 445:Action : Shift and goto state 67
+   yacc.py: 410:
+   yacc.py: 411:State  : 67
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN ID . LexToken(COMMA,',',8,128)
+   yacc.py: 471:Action : Reduce rule [id_list -> ID] with ['fred'] and goto state 66
+   yacc.py: 506:Result : <list @ 0x7f7689925500> (['fred'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 66
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list . LexToken(COMMA,',',8,128)
+   yacc.py: 445:Action : Shift and goto state 95
+   yacc.py: 410:
+   yacc.py: 411:State  : 95
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list COMMA . LexToken(ID,'wilma',8,130)
+   yacc.py: 445:Action : Shift and goto state 102
+   yacc.py: 410:
+   yacc.py: 411:State  : 102
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list COMMA ID . LexToken(COMMA,',',8,135)
+   yacc.py: 471:Action : Reduce rule [id_list -> id_list COMMA ID] with [['fred'],',','wilma'] and goto state 66
+   yacc.py: 506:Result : <list @ 0x7f7689925500> (['fred', 'wilma'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 66
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list . LexToken(COMMA,',',8,135)
+   yacc.py: 445:Action : Shift and goto state 95
+   yacc.py: 410:
+   yacc.py: 411:State  : 95
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list COMMA . LexToken(ID,'barney',8,137)
+   yacc.py: 445:Action : Shift and goto state 102
+   yacc.py: 410:
+   yacc.py: 411:State  : 102
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list COMMA ID . LexToken(COMMA,',',8,143)
+   yacc.py: 471:Action : Reduce rule [id_list -> id_list COMMA ID] with [<list @ 0x7f7689925500>,',','barney'] and goto state 66
+   yacc.py: 506:Result : <list @ 0x7f7689925500> (['fred', 'wilma', 'barney'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 66
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list . LexToken(COMMA,',',8,143)
+   yacc.py: 445:Action : Shift and goto state 95
+   yacc.py: 410:
+   yacc.py: 411:State  : 95
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list COMMA . LexToken(ID,'betty',8,145)
+   yacc.py: 445:Action : Shift and goto state 102
+   yacc.py: 410:
+   yacc.py: 411:State  : 102
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list COMMA ID . LexToken(RPAREN,')',8,151)
+   yacc.py: 471:Action : Reduce rule [id_list -> id_list COMMA ID] with [<list @ 0x7f7689925500>,',','betty'] and goto state 66
+   yacc.py: 506:Result : <list @ 0x7f7689925500> (['fred', 'wilma', 'barney', 'betty'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 66
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list . LexToken(RPAREN,')',8,151)
+   yacc.py: 445:Action : Shift and goto state 94
+   yacc.py: 410:
+   yacc.py: 411:State  : 94
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON READ LPAREN id_list RPAREN . $end
+   yacc.py: 471:Action : Reduce rule [statement -> READ LPAREN id_list RPAREN] with ['read','(',<list @ 0x7f7689925500>,')'] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7f76899716e0> (('READ', ['fred', 'wilma', 'barney', 'be ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . $end
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7f7689925730>,';',<tuple @ 0x7f76899716e0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f7689925730> ([('READ', ['fred']), ('READ', ['fred', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . $end
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f7689925730>] and goto state 2
+   yacc.py: 506:Result : <list @ 0x7f7689925730> ([('READ', ['fred']), ('READ', ['fred', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 2
+   yacc.py: 430:Defaulted state 2: Reduce using 1
+   yacc.py: 435:Stack  : statement_list . $end
+   yacc.py: 471:Action : Reduce rule [program -> statement_list] with [<list @ 0x7f7689925730>] and goto state 1
+   yacc.py: 506:Result : <tuple @ 0x7f76899202d0> (('BLOCK', [('READ', ['fred']), ('READ',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 1
+   yacc.py: 435:Stack  : program . $end
+   yacc.py: 571:Done   : Returning <tuple @ 0x7f76899202d0> (('BLOCK', [('READ', ['fred']), ('READ',  ...)
+   yacc.py: 572:PLY: PARSE DEBUG END

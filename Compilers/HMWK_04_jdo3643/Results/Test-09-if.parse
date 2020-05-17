@@ -1,0 +1,36 @@
+BLOCK (5)
+  IF-NO-ELSE
+    BINOP '<'
+      ID 'a'
+      ID 'b'
+    BLOCK (1)
+      ASSIGN 'a'
+        BINOP '+'
+          ID 'a'
+          LITERAL 'INT', 1
+  IF
+    BINOP '<'
+      ID 'a'
+      ID 'b'
+    BLOCK (1)
+      ASSIGN 'b'
+        BINOP '-'
+          ID 'b'
+          LITERAL 'INT', 1
+    BLOCK (1)
+      ASSIGN 'b'
+        BINOP '+'
+          ID 'b'
+          LITERAL 'INT', 1
+  IF-NO-ELSE
+    UNOP 'NOT_LOGICAL'
+      BINOP '>'
+        ID 'a'
+        ID 'b'
+    BLOCK (1)
+      ASSIGN 'a'
+        BINOP '+'
+          ID 'a'
+          LITERAL 'INT', 2
+  NOOP
+  NOOP

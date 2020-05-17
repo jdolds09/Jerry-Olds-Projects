@@ -1,0 +1,8 @@
+Command to build all targets: make
+
+Commands to build individual targets: make 300 make 290 make 280
+
+Commands to run executables: ./300 ./290 ./280
+
+Command to remove executables: make clean
+                                                                                                          

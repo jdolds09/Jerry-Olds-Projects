@@ -1,0 +1,6 @@
+﻿  OOMusketeersJO.cpp
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\set 2 program 4\set 2 program 4\oomusketeersjo.cpp(97): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\set 2 program 4\set 2 program 4\oomusketeersjo.cpp(155): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\set 2 program 4\set 2 program 4\oomusketeersjo.cpp(165): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Set 2 Program 4.vcxproj -> C:\Users\jdold\Desktop\Code\C++ 2 Electric Boogaloo\Set 2 Program 4\Debug\Set 2 Program 4.exe
+  Set 2 Program 4.vcxproj -> C:\Users\jdold\Desktop\Code\C++ 2 Electric Boogaloo\Set 2 Program 4\Debug\Set 2 Program 4.pdb (Full PDB)

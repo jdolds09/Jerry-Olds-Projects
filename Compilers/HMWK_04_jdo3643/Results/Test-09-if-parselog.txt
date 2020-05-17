@@ -1,0 +1,629 @@
+    lex.py: 924:lex: tokens   = ['INTEGER_LITERAL', 'REAL_LITERAL', 'STRING_LITERAL', 'ID', 'LPAREN', 'RPAREN', 'SEMICOLON', 'COMMA', 'AND_BITWISE', 'ASSIGN', 'DIVIDE', 'EQUAL', 'EXPONENTIATION', 'FACTORIAL', 'GREATER', 'GREATER_EQUAL', 'LESS', 'LESS_EQUAL', 'MINUS', 'MODULUS', 'MULTIPLY', 'NOT_BITWISE', 'NOT_EQUAL', 'OR_BITWISE', 'PLUS', 'RANDOM', 'SQUARE_ROOT', 'XOR_BITWISE', 'AND_LOGICAL', 'OR_LOGICAL', 'NOT_LOGICAL', 'EXIT', 'IF', 'THEN', 'ELSE', 'END', 'WHILE', 'DO', 'BREAK', 'CONTINUE', 'READ', 'WRITE', 'INT', 'REAL']
+    lex.py: 925:lex: literals = ''
+    lex.py: 926:lex: states   = {'INITIAL': 'inclusive'}
+    lex.py: 953:lex: Adding rule t_ID -> '[_a-zA-Z][_a-zA-Z0-9]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_REAL_LITERAL -> '(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_INTEGER_LITERAL -> '(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_STRING_LITERAL -> '"[^"
+]*"' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_comment -> '@[^
+]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_newline -> '\n+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EQUAL -> '==' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER_EQUAL -> '>=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS_EQUAL -> '<=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_EQUAL -> '<>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EXPONENTIATION -> '\^' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MULTIPLY -> '\*' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_OR_BITWISE -> '\|' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_PLUS -> '\+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RANDOM -> '\?' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SQUARE_ROOT -> '\$' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_XOR_BITWISE -> '\#' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LPAREN -> '\(' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RPAREN -> '\)' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_AND_BITWISE -> '&' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_ASSIGN -> '=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_DIVIDE -> '/' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_FACTORIAL -> '!' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER -> '>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS -> '<' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MINUS -> '-' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MODULUS -> '%' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_BITWISE -> '~' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_COMMA -> ',' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SEMICOLON -> ';' (state 'INITIAL')
+    lex.py: 966:lex: ==== MASTER REGEXS FOLLOW ====
+    lex.py: 975:lex: state 'INITIAL' : regex[0] = '(?P<t_ID>[_a-zA-Z][_a-zA-Z0-9]*)|(?P<t_REAL_LITERAL>(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?))|(?P<t_INTEGER_LITERAL>(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+))|(?P<t_STRING_LITERAL>"[^"
+]*")|(?P<t_comment>@[^
+]*)|(?P<t_newline>\n+)|(?P<t_EQUAL>==)|(?P<t_GREATER_EQUAL>>=)|(?P<t_LESS_EQUAL><=)|(?P<t_NOT_EQUAL><>)|(?P<t_EXPONENTIATION>\^)|(?P<t_MULTIPLY>\*)|(?P<t_OR_BITWISE>\|)|(?P<t_PLUS>\+)|(?P<t_RANDOM>\?)|(?P<t_SQUARE_ROOT>\$)|(?P<t_XOR_BITWISE>\#)|(?P<t_LPAREN>\()|(?P<t_RPAREN>\))|(?P<t_AND_BITWISE>&)|(?P<t_ASSIGN>=)|(?P<t_DIVIDE>/)|(?P<t_FACTORIAL>!)|(?P<t_GREATER>>)|(?P<t_LESS><)|(?P<t_MINUS>-)|(?P<t_MODULUS>%)|(?P<t_NOT_BITWISE>~)|(?P<t_COMMA>,)|(?P<t_SEMICOLON>;)'
+   yacc.py: 362:PLY: PARSE DEBUG START
+   yacc.py: 410:
+   yacc.py: 411:State  : 0
+   yacc.py: 435:Stack  : . LexToken(IF,'if',6,103)
+   yacc.py: 445:Action : Shift and goto state 12
+   yacc.py: 410:
+   yacc.py: 411:State  : 12
+   yacc.py: 435:Stack  : IF . LexToken(ID,'a',6,106)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : IF ID . LexToken(LESS,'<',6,108)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c95cc730> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : IF expression . LexToken(LESS,'<',6,108)
+   yacc.py: 445:Action : Shift and goto state 47
+   yacc.py: 410:
+   yacc.py: 411:State  : 47
+   yacc.py: 435:Stack  : IF expression LESS . LexToken(ID,'b',6,110)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : IF expression LESS ID . LexToken(THEN,'then',6,112)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 81
+   yacc.py: 506:Result : <tuple @ 0x7f38c95cc6e0> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 81
+   yacc.py: 435:Stack  : IF expression LESS expression . LexToken(THEN,'then',6,112)
+   yacc.py: 471:Action : Reduce rule [expression -> expression LESS expression] with [('ID', 'a'),'<',('ID', 'b')] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c95d69b0> (('BINOP', '<', ('ID', 'a'), ('ID', 'b')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : IF expression . LexToken(THEN,'then',6,112)
+   yacc.py: 445:Action : Shift and goto state 65
+   yacc.py: 410:
+   yacc.py: 411:State  : 65
+   yacc.py: 435:Stack  : IF expression THEN . LexToken(ID,'a',7,119)
+   yacc.py: 445:Action : Shift and goto state 6
+   yacc.py: 410:
+   yacc.py: 411:State  : 6
+   yacc.py: 435:Stack  : IF expression THEN ID . LexToken(ASSIGN,'=',7,121)
+   yacc.py: 445:Action : Shift and goto state 17
+   yacc.py: 410:
+   yacc.py: 411:State  : 17
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN . LexToken(ID,'a',7,123)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN ID . LexToken(PLUS,'+',7,125)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c957b2d0> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN expression . LexToken(PLUS,'+',7,125)
+   yacc.py: 445:Action : Shift and goto state 55
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN expression PLUS . LexToken(INTEGER_LITERAL,1,7,127)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN expression PLUS INTEGER_LITERAL . LexToken(END,'end',8,129)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [1] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7f38c95701e0> (('LITERAL', 'INT', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN expression PLUS expression . LexToken(END,'end',8,129)
+   yacc.py: 471:Action : Reduce rule [expression -> expression PLUS expression] with [('ID', 'a'),'+',<tuple @ 0x7f38c95701e0>] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c95771d0> (('BINOP', '+', ('ID', 'a'), ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : IF expression THEN ID ASSIGN expression . LexToken(END,'end',8,129)
+   yacc.py: 471:Action : Reduce rule [statement -> ID ASSIGN expression] with ['a','=',<tuple @ 0x7f38c95771d0>] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f38c9570190> (('ASSIGN', 'a', ('BINOP', '+', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : IF expression THEN statement . LexToken(END,'end',8,129)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f38c9570190>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580230> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : IF expression THEN statement_list_C . LexToken(END,'end',8,129)
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f38c9580230>] and goto state 93
+   yacc.py: 506:Result : <list @ 0x7f38c9580230> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 93
+   yacc.py: 435:Stack  : IF expression THEN statement_list . LexToken(END,'end',8,129)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 100
+   yacc.py: 548:Result : <NoneType @ 0x55b491289f70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 100
+   yacc.py: 430:Defaulted state 100: Reduce using 12
+   yacc.py: 435:Stack  : IF expression THEN statement_list epsilon . LexToken(END,'end',8,129)
+   yacc.py: 471:Action : Reduce rule [else_opt -> epsilon] with [None] and goto state 99
+   yacc.py: 506:Result : <list @ 0x7f38c9580730> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 99
+   yacc.py: 435:Stack  : IF expression THEN statement_list else_opt . LexToken(END,'end',8,129)
+   yacc.py: 445:Action : Shift and goto state 105
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : IF expression THEN statement_list else_opt END . LexToken(IF,'if',8,133)
+   yacc.py: 445:Action : Shift and goto state 108
+   yacc.py: 410:
+   yacc.py: 411:State  : 108
+   yacc.py: 435:Stack  : IF expression THEN statement_list else_opt END IF . LexToken(SEMICOLON,';',8,135)
+   yacc.py: 471:Action : Reduce rule [statement -> IF expression THEN statement_list else_opt END IF] with ['if',<tuple @ 0x7f38c95d69b0>,'then',<list @ 0x7f38c9580230>,[],'end','if'] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f38c9570320> (('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement . LexToken(SEMICOLON,';',8,135)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f38c9570320>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580500> ([('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',8,135)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(IF,'if',10,138)
+   yacc.py: 445:Action : Shift and goto state 12
+   yacc.py: 410:
+   yacc.py: 411:State  : 12
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF . LexToken(ID,'a',10,141)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF ID . LexToken(LESS,'<',10,143)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c957b7d0> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(LESS,'<',10,143)
+   yacc.py: 445:Action : Shift and goto state 47
+   yacc.py: 410:
+   yacc.py: 411:State  : 47
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression LESS . LexToken(ID,'b',10,145)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression LESS ID . LexToken(THEN,'then',10,147)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 81
+   yacc.py: 506:Result : <tuple @ 0x7f38c957ba50> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 81
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression LESS expression . LexToken(THEN,'then',10,147)
+   yacc.py: 471:Action : Reduce rule [expression -> expression LESS expression] with [('ID', 'a'),'<',('ID', 'b')] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c9610a10> (('BINOP', '<', ('ID', 'a'), ('ID', 'b')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(THEN,'then',10,147)
+   yacc.py: 445:Action : Shift and goto state 65
+   yacc.py: 410:
+   yacc.py: 411:State  : 65
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN . LexToken(ID,'b',11,154)
+   yacc.py: 445:Action : Shift and goto state 6
+   yacc.py: 410:
+   yacc.py: 411:State  : 6
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID . LexToken(ASSIGN,'=',11,156)
+   yacc.py: 445:Action : Shift and goto state 17
+   yacc.py: 410:
+   yacc.py: 411:State  : 17
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN . LexToken(ID,'b',11,158)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN ID . LexToken(MINUS,'-',11,160)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c957bcd0> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN expression . LexToken(MINUS,'-',11,160)
+   yacc.py: 445:Action : Shift and goto state 49
+   yacc.py: 410:
+   yacc.py: 411:State  : 49
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN expression MINUS . LexToken(INTEGER_LITERAL,1,11,162)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN expression MINUS INTEGER_LITERAL . LexToken(ELSE,'else',12,164)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [1] and goto state 83
+   yacc.py: 506:Result : <tuple @ 0x7f38c9570eb0> (('LITERAL', 'INT', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 83
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN expression MINUS expression . LexToken(ELSE,'else',12,164)
+   yacc.py: 471:Action : Reduce rule [expression -> expression MINUS expression] with [('ID', 'b'),'-',<tuple @ 0x7f38c9570eb0>] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c9577170> (('BINOP', '-', ('ID', 'b'), ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN ID ASSIGN expression . LexToken(ELSE,'else',12,164)
+   yacc.py: 471:Action : Reduce rule [statement -> ID ASSIGN expression] with ['b','=',<tuple @ 0x7f38c9577170>] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f38c95765a0> (('ASSIGN', 'b', ('BINOP', '-', ('ID', 'b ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement . LexToken(ELSE,'else',12,164)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f38c95765a0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580690> ([('ASSIGN', 'b', ('BINOP', '-', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list_C . LexToken(ELSE,'else',12,164)
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f38c9580690>] and goto state 93
+   yacc.py: 506:Result : <list @ 0x7f38c9580690> ([('ASSIGN', 'b', ('BINOP', '-', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 93
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list . LexToken(ELSE,'else',12,164)
+   yacc.py: 445:Action : Shift and goto state 101
+   yacc.py: 410:
+   yacc.py: 411:State  : 101
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE . LexToken(ID,'b',13,171)
+   yacc.py: 445:Action : Shift and goto state 6
+   yacc.py: 410:
+   yacc.py: 411:State  : 6
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID . LexToken(ASSIGN,'=',13,173)
+   yacc.py: 445:Action : Shift and goto state 17
+   yacc.py: 410:
+   yacc.py: 411:State  : 17
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN . LexToken(ID,'b',13,175)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN ID . LexToken(PLUS,'+',13,177)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c957bf50> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression . LexToken(PLUS,'+',13,177)
+   yacc.py: 445:Action : Shift and goto state 55
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression PLUS . LexToken(INTEGER_LITERAL,1,13,179)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression PLUS INTEGER_LITERAL . LexToken(END,'end',14,181)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [1] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7f38c9576d70> (('LITERAL', 'INT', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression PLUS expression . LexToken(END,'end',14,181)
+   yacc.py: 471:Action : Reduce rule [expression -> expression PLUS expression] with [('ID', 'b'),'+',<tuple @ 0x7f38c9576d70>] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c95cb950> (('BINOP', '+', ('ID', 'b'), ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression . LexToken(END,'end',14,181)
+   yacc.py: 471:Action : Reduce rule [statement -> ID ASSIGN expression] with ['b','=',<tuple @ 0x7f38c95cb950>] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f38c9576aa0> (('ASSIGN', 'b', ('BINOP', '+', ('ID', 'b ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement . LexToken(END,'end',14,181)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f38c9576aa0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580730> ([('ASSIGN', 'b', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement_list_C . LexToken(END,'end',14,181)
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f38c9580730>] and goto state 106
+   yacc.py: 506:Result : <list @ 0x7f38c9580730> ([('ASSIGN', 'b', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 106
+   yacc.py: 430:Defaulted state 106: Reduce using 13
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement_list . LexToken(END,'end',14,181)
+   yacc.py: 471:Action : Reduce rule [else_opt -> ELSE statement_list] with ['else',<list @ 0x7f38c9580730>] and goto state 99
+   yacc.py: 506:Result : <list @ 0x7f38c9580730> ([('ASSIGN', 'b', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 99
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt . LexToken(END,'end',14,181)
+   yacc.py: 445:Action : Shift and goto state 105
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END . LexToken(IF,'if',14,185)
+   yacc.py: 445:Action : Shift and goto state 108
+   yacc.py: 410:
+   yacc.py: 411:State  : 108
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END IF . LexToken(SEMICOLON,';',14,187)
+   yacc.py: 471:Action : Reduce rule [statement -> IF expression THEN statement_list else_opt END IF] with ['if',<tuple @ 0x7f38c9610a10>,'then',<list @ 0x7f38c9580690>,<list @ 0x7f38c9580730>,'end','if'] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7f38c96271d0> (('IF', ('BINOP', '<', ('ID', 'a'), ('ID' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',14,187)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7f38c9580500>,';',<tuple @ 0x7f38c96271d0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580500> ([('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',14,187)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(IF,'if',16,190)
+   yacc.py: 445:Action : Shift and goto state 12
+   yacc.py: 410:
+   yacc.py: 411:State  : 12
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF . LexToken(ID,'a',16,193)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF ID . LexToken(GREATER,'>',16,195)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c957c640> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(GREATER,'>',16,195)
+   yacc.py: 445:Action : Shift and goto state 45
+   yacc.py: 410:
+   yacc.py: 411:State  : 45
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression GREATER . LexToken(ID,'b',16,197)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression GREATER ID . LexToken(THEN,'then',16,199)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 79
+   yacc.py: 506:Result : <tuple @ 0x7f38c957c870> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 79
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression GREATER expression . LexToken(THEN,'then',16,199)
+   yacc.py: 471:Action : Reduce rule [expression -> expression GREATER expression] with [('ID', 'a'),'>',('ID', 'b')] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c95d6950> (('BINOP', '>', ('ID', 'a'), ('ID', 'b')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(THEN,'then',16,199)
+   yacc.py: 445:Action : Shift and goto state 65
+   yacc.py: 410:
+   yacc.py: 411:State  : 65
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN . LexToken(ELSE,'else',17,204)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 3
+   yacc.py: 548:Result : <NoneType @ 0x55b491289f70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 3
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN epsilon . LexToken(ELSE,'else',17,204)
+   yacc.py: 471:Action : Reduce rule [statement_list -> epsilon] with [None] and goto state 93
+   yacc.py: 506:Result : <list @ 0x7f38c9580460> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 93
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list . LexToken(ELSE,'else',17,204)
+   yacc.py: 445:Action : Shift and goto state 101
+   yacc.py: 410:
+   yacc.py: 411:State  : 101
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE . LexToken(ID,'a',18,211)
+   yacc.py: 445:Action : Shift and goto state 6
+   yacc.py: 410:
+   yacc.py: 411:State  : 6
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID . LexToken(ASSIGN,'=',18,213)
+   yacc.py: 445:Action : Shift and goto state 17
+   yacc.py: 410:
+   yacc.py: 411:State  : 17
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN . LexToken(ID,'a',18,215)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN ID . LexToken(PLUS,'+',18,217)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c957ab40> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression . LexToken(PLUS,'+',18,217)
+   yacc.py: 445:Action : Shift and goto state 55
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression PLUS . LexToken(INTEGER_LITERAL,2,18,219)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression PLUS INTEGER_LITERAL . LexToken(END,'end',19,221)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [2] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7f38c9576b40> (('LITERAL', 'INT', 2))
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression PLUS expression . LexToken(END,'end',19,221)
+   yacc.py: 471:Action : Reduce rule [expression -> expression PLUS expression] with [('ID', 'a'),'+',<tuple @ 0x7f38c9576b40>] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f38c95d6890> (('BINOP', '+', ('ID', 'a'), ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE ID ASSIGN expression . LexToken(END,'end',19,221)
+   yacc.py: 471:Action : Reduce rule [statement -> ID ASSIGN expression] with ['a','=',<tuple @ 0x7f38c95d6890>] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f38c9579500> (('ASSIGN', 'a', ('BINOP', '+', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement . LexToken(END,'end',19,221)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f38c9579500>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9582690> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement_list_C . LexToken(END,'end',19,221)
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f38c9582690>] and goto state 106
+   yacc.py: 506:Result : <list @ 0x7f38c9582690> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 106
+   yacc.py: 430:Defaulted state 106: Reduce using 13
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement_list . LexToken(END,'end',19,221)
+   yacc.py: 471:Action : Reduce rule [else_opt -> ELSE statement_list] with ['else',<list @ 0x7f38c9582690>] and goto state 99
+   yacc.py: 506:Result : <list @ 0x7f38c9582690> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 99
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt . LexToken(END,'end',19,221)
+   yacc.py: 445:Action : Shift and goto state 105
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END . LexToken(IF,'if',19,225)
+   yacc.py: 445:Action : Shift and goto state 108
+   yacc.py: 410:
+   yacc.py: 411:State  : 108
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END IF . LexToken(SEMICOLON,';',19,227)
+   yacc.py: 471:Action : Reduce rule [statement -> IF expression THEN statement_list else_opt END IF] with ['if',<tuple @ 0x7f38c95d6950>,'then',[],<list @ 0x7f38c9582690>,'end','if'] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7f38c9579fa0> (('IF-NO-ELSE', ('UNOP', 'NOT_LOGICAL', ( ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',19,227)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7f38c9580500>,';',<tuple @ 0x7f38c9579fa0>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580500> ([('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',19,227)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(IF,'if',21,230)
+   yacc.py: 445:Action : Shift and goto state 12
+   yacc.py: 410:
+   yacc.py: 411:State  : 12
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF . LexToken(ID,'a',21,233)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF ID . LexToken(EQUAL,'==',21,235)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c957a280> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(EQUAL,'==',21,235)
+   yacc.py: 445:Action : Shift and goto state 43
+   yacc.py: 410:
+   yacc.py: 411:State  : 43
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression EQUAL . LexToken(ID,'b',21,238)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression EQUAL ID . LexToken(THEN,'then',21,240)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 77
+   yacc.py: 506:Result : <tuple @ 0x7f38c957caa0> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 77
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression EQUAL expression . LexToken(THEN,'then',21,240)
+   yacc.py: 471:Action : Reduce rule [expression -> expression EQUAL expression] with [('ID', 'a'),'==',('ID', 'b')] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c95d68f0> (('BINOP', '==', ('ID', 'a'), ('ID', 'b') ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(THEN,'then',21,240)
+   yacc.py: 445:Action : Shift and goto state 65
+   yacc.py: 410:
+   yacc.py: 411:State  : 65
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN . LexToken(END,'end',22,245)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 3
+   yacc.py: 548:Result : <NoneType @ 0x55b491289f70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 3
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN epsilon . LexToken(END,'end',22,245)
+   yacc.py: 471:Action : Reduce rule [statement_list -> epsilon] with [None] and goto state 93
+   yacc.py: 506:Result : <list @ 0x7f38c9580960> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 93
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list . LexToken(END,'end',22,245)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 100
+   yacc.py: 548:Result : <NoneType @ 0x55b491289f70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 100
+   yacc.py: 430:Defaulted state 100: Reduce using 12
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list epsilon . LexToken(END,'end',22,245)
+   yacc.py: 471:Action : Reduce rule [else_opt -> epsilon] with [None] and goto state 99
+   yacc.py: 506:Result : <list @ 0x7f38c9582640> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 99
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt . LexToken(END,'end',22,245)
+   yacc.py: 445:Action : Shift and goto state 105
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END . LexToken(IF,'if',22,249)
+   yacc.py: 445:Action : Shift and goto state 108
+   yacc.py: 410:
+   yacc.py: 411:State  : 108
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END IF . LexToken(SEMICOLON,';',22,251)
+   yacc.py: 471:Action : Reduce rule [statement -> IF expression THEN statement_list else_opt END IF] with ['if',<tuple @ 0x7f38c95d68f0>,'then',[],[],'end','if'] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7f38cb4e8210> (('NOOP',))
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . LexToken(SEMICOLON,';',22,251)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7f38c9580500>,';',('NOOP',)] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580500> ([('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . LexToken(SEMICOLON,';',22,251)
+   yacc.py: 445:Action : Shift and goto state 16
+   yacc.py: 410:
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON . LexToken(IF,'if',24,254)
+   yacc.py: 445:Action : Shift and goto state 12
+   yacc.py: 410:
+   yacc.py: 411:State  : 12
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF . LexToken(ID,'a',24,257)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF ID . LexToken(NOT_EQUAL,'<>',24,259)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c957a280> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(NOT_EQUAL,'<>',24,259)
+   yacc.py: 445:Action : Shift and goto state 52
+   yacc.py: 410:
+   yacc.py: 411:State  : 52
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression NOT_EQUAL . LexToken(ID,'b',24,262)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression NOT_EQUAL ID . LexToken(THEN,'then',24,264)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 86
+   yacc.py: 506:Result : <tuple @ 0x7f38c957caa0> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 86
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression NOT_EQUAL expression . LexToken(THEN,'then',24,264)
+   yacc.py: 471:Action : Reduce rule [expression -> expression NOT_EQUAL expression] with [('ID', 'a'),'<>',('ID', 'b')] and goto state 30
+   yacc.py: 506:Result : <tuple @ 0x7f38c95d68f0> (('BINOP', '<>', ('ID', 'a'), ('ID', 'b') ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression . LexToken(THEN,'then',24,264)
+   yacc.py: 445:Action : Shift and goto state 65
+   yacc.py: 410:
+   yacc.py: 411:State  : 65
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN . LexToken(ELSE,'else',25,269)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 3
+   yacc.py: 548:Result : <NoneType @ 0x55b491289f70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 3
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN epsilon . LexToken(ELSE,'else',25,269)
+   yacc.py: 471:Action : Reduce rule [statement_list -> epsilon] with [None] and goto state 93
+   yacc.py: 506:Result : <list @ 0x7f38c9580460> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 93
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list . LexToken(ELSE,'else',25,269)
+   yacc.py: 445:Action : Shift and goto state 101
+   yacc.py: 410:
+   yacc.py: 411:State  : 101
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE . LexToken(END,'end',26,274)
+   yacc.py: 474:Action : Reduce rule [epsilon -> <empty>] with [] and goto state 3
+   yacc.py: 548:Result : <NoneType @ 0x55b491289f70> (None)
+   yacc.py: 410:
+   yacc.py: 411:State  : 3
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE epsilon . LexToken(END,'end',26,274)
+   yacc.py: 471:Action : Reduce rule [statement_list -> epsilon] with [None] and goto state 106
+   yacc.py: 506:Result : <list @ 0x7f38c9582780> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 106
+   yacc.py: 430:Defaulted state 106: Reduce using 13
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list ELSE statement_list . LexToken(END,'end',26,274)
+   yacc.py: 471:Action : Reduce rule [else_opt -> ELSE statement_list] with ['else',[]] and goto state 99
+   yacc.py: 506:Result : <list @ 0x7f38c9582780> ([])
+   yacc.py: 410:
+   yacc.py: 411:State  : 99
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt . LexToken(END,'end',26,274)
+   yacc.py: 445:Action : Shift and goto state 105
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END . LexToken(IF,'if',26,278)
+   yacc.py: 445:Action : Shift and goto state 108
+   yacc.py: 410:
+   yacc.py: 411:State  : 108
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON IF expression THEN statement_list else_opt END IF . $end
+   yacc.py: 471:Action : Reduce rule [statement -> IF expression THEN statement_list else_opt END IF] with ['if',<tuple @ 0x7f38c95d68f0>,'then',[],[],'end','if'] and goto state 34
+   yacc.py: 506:Result : <tuple @ 0x7f38cb4e8210> (('NOOP',))
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : statement_list_C SEMICOLON statement . $end
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement_list_C SEMICOLON statement] with [<list @ 0x7f38c9580500>,';',('NOOP',)] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f38c9580500> ([('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . $end
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f38c9580500>] and goto state 2
+   yacc.py: 506:Result : <list @ 0x7f38c9580500> ([('IF-NO-ELSE', ('BINOP', '<', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 2
+   yacc.py: 430:Defaulted state 2: Reduce using 1
+   yacc.py: 435:Stack  : statement_list . $end
+   yacc.py: 471:Action : Reduce rule [program -> statement_list] with [<list @ 0x7f38c9580500>] and goto state 1
+   yacc.py: 506:Result : <tuple @ 0x7f38c957a280> (('BLOCK', [('IF-NO-ELSE', ('BINOP', '<', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 1
+   yacc.py: 435:Stack  : program . $end
+   yacc.py: 571:Done   : Returning <tuple @ 0x7f38c957a280> (('BLOCK', [('IF-NO-ELSE', ('BINOP', '<', ...)
+   yacc.py: 572:PLY: PARSE DEBUG END

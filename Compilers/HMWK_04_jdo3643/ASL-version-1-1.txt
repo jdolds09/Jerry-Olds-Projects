@@ -1,0 +1,418 @@
+#-----------------------------------------------------------
+# ASL version 1.1
+#-----------------------------------------------------------
+Expressions
+==========
+
+#---------------------------------------
+# Operators
+#---------
+
+  ----------------------------------------------------
+  OR_LOGICAL      or    (binary, left-to-right)
+
+  ----------------------------------------------------
+  AND_LOGICAL     and   (binary, left-to-right)
+
+  ----------------------------------------------------
+  OR_BITWISE      |     (binary, left-to-right)
+
+  ----------------------------------------------------
+  XOR_BITWISE     #     (binary, left-to-right)
+
+  ----------------------------------------------------
+  AND_BITWISE     &     (binary, left-to-right)
+
+  ----------------------------------------------------
+  EQUAL           ==    (binary, left-to-right)
+  NOT_EQUAL       <>    (binary, left-to-right)
+
+  ----------------------------------------------------
+  LESS            <     (binary, left-to-right)
+  LESS_EQUAL      <=    (binary, left-to-right)
+  GREATER         >     (binary, left-to-right)
+  GREATER_EQUAL   >=    (binary, left-to-right)
+
+  ----------------------------------------------------
+  RANDOM          ?     (binary, left-to-right)
+
+  ----------------------------------------------------
+  PLUS            +     (binary, left-to-right)
+  MINUS           -     (binary, left-to-right)
+
+  ----------------------------------------------------
+  MULTIPLY        *     (binary, left-to-right)
+  DIVIDE          /     (binary, left-to-right)
+  MODULUS         %     (binary, left-to-right)
+
+  ----------------------------------------------------
+  EXPONENTIATION  ^     (binary, right-to-left)
+
+  ----------------------------------------------------
+  UMINUS          -     (unary, prefix, right-to-left)
+  UPLUS           +     (unary, prefix, right-to-left)
+  NOT_BITWISE     ~     (unary, prefix, right-to-left)
+  NOT_LOGICAL     not   (unary, prefix, right-to-left)
+
+  ----------------------------------------------------
+  FACTORIAL       !     (unary, suffix, left-to-right)
+  SQUARE_ROOT     $     (unary, suffix, left-to-right)
+
+  # Expression parse forms
+  ( 'UNOP', <op>, <operand> )
+
+  # Examples:
+    -1
+      ( 'UNOP', '-',
+        ( 'LITERAL', 'INT', 1 ) )
+
+    25$
+      ( 'UNOP', '$',
+        ( 'LITERAL', 'INT', 25 ) )
+
+  ( 'BINOP', <op>, <left>, <right> )
+
+  # Examples:
+    2^16
+      ( 'BINOP', '^',
+        ( 'LITERAL', 'INT', 2 ),
+        ( 'LITERAL', 'INT', 16 ) )
+
+    fact == original!
+      ( 'BINOP', '==',
+        ( 'ID', 'fact' ),
+        ( 'UNOP', '!', ( 'ID', 'original' ) ) )
+
+    ( 1 + 2 ) * 3
+
+      ( 'BINOP', '*',
+        ( 'BINOP', '+',
+          ( 'LITERAL', 'INT', 1 ),
+          ( 'LITERAL', 'INT', 2 ) ),
+        ( 'LITERAL', 'INT', 3 ) )
+
+    1 + 2 * 3
+
+    ( 'BINOP', '+',
+      ( 'LITERAL', 'INT', 1 ),
+      ( 'BINOP', '*',
+        ( 'LITERAL', 'INT', 2 ),
+        ( 'LITERAL', 'INT', 3 ) ) )
+
+#---------------------------------------
+# Literals
+#---------
+
+  INTEGER
+    a sequence of decimal digits
+    '0b' followed by a sequence of binary digits
+    '0o' followed by a sequence of octal digits
+    '0x' followed by a sequence of hex digits
+    a Roman number
+
+  REAL
+    a sequence of decimal digits including a decimal point '.'
+    and optionally an exponent, which is the letter 'e' or 'E'
+    optionally followed by a sign ('+' or '-') followed by a
+    sequence of decimal digits.
+
+    If the exponent is given, the decimal point may be omitted.
+
+  STRING
+    any characters except " and new line within quotation
+    marks (").
+
+  # Literal parse form
+  ( 'LITERAL', <type>, <value> )
+
+  # Examples:
+      ( 'LITERAL', 'INT', 0 )
+
+      ( 'LITERAL', 'REAL', 3.14159 )
+
+      ( 'LITERAL', 'STRING', "This is a string literal!" )
+
+#-----------------------------------------------------------
+Statements
+==========
+
+#---------------------------------------
+# Declaration statement
+#---------
+
+  <type_name> <id> [ = <expression> ]
+
+The only type names are 'int' and 'real'.
+
+int declarations must have int initializer expressions.
+
+real declarations may have either int or real initializer
+expressions.
+
+The initialization expression can be omitted.  In this case, the
+variable is initialized with 0 (or 0.0).
+
+All variables must be declared before they can be used in any
+statement.
+
+Examples:
+
+  int dino
+
+  int fred = 17
+
+  real barney
+
+  real wilma = 16.234
+
+  real betty = 12
+
+  # Declaration parse form
+  ( 'DECLARATION', <type>, <var name>, <initializer> )
+
+  # Examples:
+    int fred = 12
+      ( 'DECLARATION', 'INT', 'fred',
+        ( 'LITERAL', 'INT', 12 ) )
+
+    real barney
+      ( 'DECLARATION', 'REAL', 'barney',
+        ( 'LITERAL', 'REAL', 0.0 ) )
+
+    int wilma = 22^5!
+      ( 'DECLARATION', 'INT', 'wilma',
+        ( 'BINOP', '^',
+          ( 'LITERAL', 'INT', 22 ),
+          ( 'LITERAL', 'INT', 5 ) ) )
+
+#---------------------------------------
+# ASSIGN statement
+#---------
+
+<lvalue> = <expression>
+
+The only kind of lvalue is a variable name (that is, an id).
+
+The type of the expression should be 'compatible' with the type
+of the variable.  'Compatible' means an int variable can get an
+int expression but a real variable can get an int or a real
+expression.
+
+  # Parse form
+  ( 'ASSIGN', <lvalue>, <expression> )
+
+  # Examples:
+    a = b
+      ( 'ASSIGN', 'a',
+        ( 'ID', 'b' ) )
+
+    b = c + 1.3
+      ( 'ASSIGN', 'b',
+        ( 'BINOP', '+',
+          ( 'ID', 'c' ),
+          ( 'LITERAL', 'REAL', 1.3 ) ) )
+
+#---------------------------------------
+# EXIT statement
+#---------
+
+  EXIT [ <expresssion> ]
+
+Exits the program, returning the value of the expression, which
+must be an integer.  This expression may be omitted, in which case
+it defaults to 0.
+
+  # Parse form
+  ( 'EXIT', <expression> )
+
+  # Examples:
+    exit
+      ( 'EXIT',
+        ( 'LITERAL', 'INT', 0 ) )
+
+    exit q * 14
+      ( 'EXIT',
+        ( 'BINOP', '*',
+          ( 'ID', 'q' ),
+          ( 'LITERAL', 'INT', 14 ) ) )
+
+#---------------------------------------
+# IF statement
+#---------
+
+IF statements come in two forms, as the ELSE portion is optional.
+
+  IF <test expression> THEN
+
+      <statement list>
+
+  END IF
+
+
+  IF <expression> THEN
+
+      <statement list>
+
+  ELSE
+
+      <statement list>
+
+  END IF
+
+Evaluate the test expression.  If it's non-zero, execute the THEN
+side.  If it's zero, execute the ELSE side (if there is one).
+
+  # Parse form
+  ( 'IF-NO-ELSE', <test>, <thenblock> )
+
+  ( 'IF', <test>, <thenblock>, <elseblock> )
+
+  # Examples:
+    if fred then barney = wilma + betty end if
+      ( 'IF-NO-ELSE',
+        ( 'ID', 'fred' ),
+        ( 'BLOCK', (
+          ( 'ASSIGN', 'barney',
+            ( 'BINOP', '+',
+              ( 'ID', 'wilma' ),
+              ( 'ID', 'betty' ) ) ) ) ) )
+
+    if condition then break else continue end if
+      ( 'IF',
+        ( 'ID', 'condition' ),
+        ( 'BLOCK', (
+          ( 'BREAK' ) ) ),
+        ( 'BLOCK' (
+          ( 'CONTINUE' ) ) ) )
+
+#---------------------------------------
+# WHILE statement
+#---------
+
+  WHILE <test expression> DO
+
+          <statement list>
+
+  END WHILE
+
+Evaluate the test expression.  If non-zero, execute the body of
+the WHILE.  If the test expression is zero, continue with the
+statement following the WHILE.  After the WHILE body executes,
+reevaluate the test expression and try again.
+
+  # Parse form
+  ( 'WHILE', <expression>, <bodyblock> )
+
+  # Examples:
+    while a < 10 do a = a + 1 end while
+
+      ( 'WHILE',
+        ( 'BINOP', '<',
+          ( 'ID', 'a' ),
+          ( 'LITERAL', 'INT', 10 ) ),
+        ( 'BLOCK', (
+          ( 'ASSIGN', 'a',
+            ( 'BINOP', '+',
+              ( 'ID', 'a' ),
+              ( 'LITERAL', 'INT', 1 ) ) ) ) ) )
+
+#---------------------------------------
+# BREAK, CONTINUE statements
+#---------
+
+  BREAK
+
+  CONTINUE
+
+These statements may occur only within a WHILE statement.
+The BREAK statement causes the termination of the most-enclosing
+WHILE statement.
+
+The CONTINUE statement starts the next iteration of the most-
+enclosing WHILE statement.
+
+  # Parse form (and examples)
+  ( 'BREAK', )
+  ( 'CONTINUE', )
+
+#---------------------------------------
+# READ statement
+#---------
+
+  READ ( <lvalue>, <lvalue>, ... )
+
+Acquire a value of the the type of each lvalue from stdin and
+store it in the corresponding lvalue.
+
+There must be at least one lvalue in the list.
+
+Examples:
+
+  READ( fred )
+
+  READ( fred, wilma, barney, betty )
+
+  # Parse form
+  ( 'READ', <idlist> )
+
+  # Examples:
+    ( 'READ', ( 'fred' ) )
+
+    ( 'READ', ( 'fred', 'wilma', 'barney', 'betty' ) )
+
+#---------------------------------------
+# WRITE statement
+#---------
+
+  WRITE ( <expression>, <expression>, ... )
+
+Emit the string representation of each expression to stdout.  The
+expressions may be of type int, real, or string.
+
+After the expressions are emitted, emit a NEWLINE character.
+
+There do not have to be any expressions in the list.  If no
+expressions are given, all that is emitted is the NEWLINE
+character.
+
+Examples:
+
+  WRITE( "The answer is ", 1+2, "." )
+
+  WRITE()
+
+  # Parse form
+  ( 'WRITE', <expression list> )
+
+  # Examples:
+  ( 'WRITE', (
+    ( 'LITERAL', 'STRING', "The anwer is " ),
+    ( 'BINOP', '+',
+      ( 'LITERAL', 'INT', 1 ),
+      ( 'LITERAL', 'INT', 2 ) ),
+    ( 'LITERAL', 'STRING', "." ) ) )
+
+  ( 'WRITE', (,) )
+
+#---------------------------------------
+# Statement list
+#---------
+
+A statement list is either empty or is a series of statements
+separated by SEMICOLON.  It's OK if the statement list is followed
+by a trailing SEMICOLON, but that trailing SEMICOLON is not
+required.
+
+  This is a statement list that has 0 or more statements in it.
+
+<statement list> :  epsilon
+                 |  <statement list B>
+
+  This is a statement list that has at least one statement in it.
+
+<statement list B>  :  <statement>
+                    |  <statement list B> ';' <statement>
+
+  # Parse form
+  ( 'BLOCK', <statement list> )
+#-----------------------------------------------------------

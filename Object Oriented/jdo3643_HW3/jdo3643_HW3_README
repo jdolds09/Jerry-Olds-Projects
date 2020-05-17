@@ -1,0 +1,16 @@
+CSE 1325 - Object Oriented Programming
+
+Assignment:
+Homework 3
+
+Command line to build jdo3643_test.cpp:
+make test
+
+Command line to run jdo3643_test.cpp:
+./a.out
+
+Command line to build jdo3643_main.cpp
+make
+
+command line to run jdo3643_main.cpp
+./a.out

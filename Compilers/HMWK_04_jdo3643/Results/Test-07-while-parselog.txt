@@ -1,0 +1,159 @@
+    lex.py: 924:lex: tokens   = ['INTEGER_LITERAL', 'REAL_LITERAL', 'STRING_LITERAL', 'ID', 'LPAREN', 'RPAREN', 'SEMICOLON', 'COMMA', 'AND_BITWISE', 'ASSIGN', 'DIVIDE', 'EQUAL', 'EXPONENTIATION', 'FACTORIAL', 'GREATER', 'GREATER_EQUAL', 'LESS', 'LESS_EQUAL', 'MINUS', 'MODULUS', 'MULTIPLY', 'NOT_BITWISE', 'NOT_EQUAL', 'OR_BITWISE', 'PLUS', 'RANDOM', 'SQUARE_ROOT', 'XOR_BITWISE', 'AND_LOGICAL', 'OR_LOGICAL', 'NOT_LOGICAL', 'EXIT', 'IF', 'THEN', 'ELSE', 'END', 'WHILE', 'DO', 'BREAK', 'CONTINUE', 'READ', 'WRITE', 'INT', 'REAL']
+    lex.py: 925:lex: literals = ''
+    lex.py: 926:lex: states   = {'INITIAL': 'inclusive'}
+    lex.py: 953:lex: Adding rule t_ID -> '[_a-zA-Z][_a-zA-Z0-9]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_REAL_LITERAL -> '(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_INTEGER_LITERAL -> '(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+)' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_STRING_LITERAL -> '"[^"
+]*"' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_comment -> '@[^
+]*' (state 'INITIAL')
+    lex.py: 953:lex: Adding rule t_newline -> '\n+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EQUAL -> '==' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER_EQUAL -> '>=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS_EQUAL -> '<=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_EQUAL -> '<>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_EXPONENTIATION -> '\^' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MULTIPLY -> '\*' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_OR_BITWISE -> '\|' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_PLUS -> '\+' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RANDOM -> '\?' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SQUARE_ROOT -> '\$' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_XOR_BITWISE -> '\#' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LPAREN -> '\(' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_RPAREN -> '\)' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_AND_BITWISE -> '&' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_ASSIGN -> '=' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_DIVIDE -> '/' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_FACTORIAL -> '!' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_GREATER -> '>' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_LESS -> '<' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MINUS -> '-' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_MODULUS -> '%' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_NOT_BITWISE -> '~' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_COMMA -> ',' (state 'INITIAL')
+    lex.py: 959:lex: Adding rule t_SEMICOLON -> ';' (state 'INITIAL')
+    lex.py: 966:lex: ==== MASTER REGEXS FOLLOW ====
+    lex.py: 975:lex: state 'INITIAL' : regex[0] = '(?P<t_ID>[_a-zA-Z][_a-zA-Z0-9]*)|(?P<t_REAL_LITERAL>(\d+[eE][-+]?\d+)|((\d*((\.\d)|(\d\.))\d*)([eE][-+]?\d+)?))|(?P<t_INTEGER_LITERAL>(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|(\d+))|(?P<t_STRING_LITERAL>"[^"
+]*")|(?P<t_comment>@[^
+]*)|(?P<t_newline>\n+)|(?P<t_EQUAL>==)|(?P<t_GREATER_EQUAL>>=)|(?P<t_LESS_EQUAL><=)|(?P<t_NOT_EQUAL><>)|(?P<t_EXPONENTIATION>\^)|(?P<t_MULTIPLY>\*)|(?P<t_OR_BITWISE>\|)|(?P<t_PLUS>\+)|(?P<t_RANDOM>\?)|(?P<t_SQUARE_ROOT>\$)|(?P<t_XOR_BITWISE>\#)|(?P<t_LPAREN>\()|(?P<t_RPAREN>\))|(?P<t_AND_BITWISE>&)|(?P<t_ASSIGN>=)|(?P<t_DIVIDE>/)|(?P<t_FACTORIAL>!)|(?P<t_GREATER>>)|(?P<t_LESS><)|(?P<t_MINUS>-)|(?P<t_MODULUS>%)|(?P<t_NOT_BITWISE>~)|(?P<t_COMMA>,)|(?P<t_SEMICOLON>;)'
+   yacc.py: 362:PLY: PARSE DEBUG START
+   yacc.py: 410:
+   yacc.py: 411:State  : 0
+   yacc.py: 435:Stack  : . LexToken(WHILE,'while',6,103)
+   yacc.py: 445:Action : Shift and goto state 14
+   yacc.py: 410:
+   yacc.py: 411:State  : 14
+   yacc.py: 435:Stack  : WHILE . LexToken(ID,'a',6,109)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : WHILE ID . LexToken(LESS,'<',6,111)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 32
+   yacc.py: 506:Result : <tuple @ 0x7f3fbba10870> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 32
+   yacc.py: 435:Stack  : WHILE expression . LexToken(LESS,'<',6,111)
+   yacc.py: 445:Action : Shift and goto state 47
+   yacc.py: 410:
+   yacc.py: 411:State  : 47
+   yacc.py: 435:Stack  : WHILE expression LESS . LexToken(ID,'b',6,113)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : WHILE expression LESS ID . LexToken(DO,'do',6,115)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['b'] and goto state 81
+   yacc.py: 506:Result : <tuple @ 0x7f3fbba10820> (('ID', 'b'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 81
+   yacc.py: 435:Stack  : WHILE expression LESS expression . LexToken(DO,'do',6,115)
+   yacc.py: 471:Action : Reduce rule [expression -> expression LESS expression] with [('ID', 'a'),'<',('ID', 'b')] and goto state 32
+   yacc.py: 506:Result : <tuple @ 0x7f3fbba1c9b0> (('BINOP', '<', ('ID', 'a'), ('ID', 'b')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 32
+   yacc.py: 435:Stack  : WHILE expression . LexToken(DO,'do',6,115)
+   yacc.py: 445:Action : Shift and goto state 68
+   yacc.py: 410:
+   yacc.py: 411:State  : 68
+   yacc.py: 435:Stack  : WHILE expression DO . LexToken(ID,'a',7,120)
+   yacc.py: 445:Action : Shift and goto state 6
+   yacc.py: 410:
+   yacc.py: 411:State  : 6
+   yacc.py: 435:Stack  : WHILE expression DO ID . LexToken(ASSIGN,'=',7,122)
+   yacc.py: 445:Action : Shift and goto state 17
+   yacc.py: 410:
+   yacc.py: 411:State  : 17
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN . LexToken(ID,'a',7,124)
+   yacc.py: 445:Action : Shift and goto state 29
+   yacc.py: 410:
+   yacc.py: 411:State  : 29
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN ID . LexToken(PLUS,'+',7,126)
+   yacc.py: 471:Action : Reduce rule [expression -> ID] with ['a'] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f3fbb9c1410> (('ID', 'a'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN expression . LexToken(PLUS,'+',7,126)
+   yacc.py: 445:Action : Shift and goto state 55
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN expression PLUS . LexToken(INTEGER_LITERAL,1,7,128)
+   yacc.py: 445:Action : Shift and goto state 26
+   yacc.py: 410:
+   yacc.py: 411:State  : 26
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN expression PLUS INTEGER_LITERAL . LexToken(END,'end',8,130)
+   yacc.py: 471:Action : Reduce rule [expression -> INTEGER_LITERAL] with [1] and goto state 89
+   yacc.py: 506:Result : <tuple @ 0x7f3fbb9b62d0> (('LITERAL', 'INT', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 89
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN expression PLUS expression . LexToken(END,'end',8,130)
+   yacc.py: 471:Action : Reduce rule [expression -> expression PLUS expression] with [('ID', 'a'),'+',<tuple @ 0x7f3fbb9b62d0>] and goto state 35
+   yacc.py: 506:Result : <tuple @ 0x7f3fbb9bd1d0> (('BINOP', '+', ('ID', 'a'), ('LITERAL',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : WHILE expression DO ID ASSIGN expression . LexToken(END,'end',8,130)
+   yacc.py: 471:Action : Reduce rule [statement -> ID ASSIGN expression] with ['a','=',<tuple @ 0x7f3fbb9bd1d0>] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f3fbb9b6280> (('ASSIGN', 'a', ('BINOP', '+', ('ID', 'a ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : WHILE expression DO statement . LexToken(END,'end',8,130)
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f3fbb9b6280>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f3fbb9c6370> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : WHILE expression DO statement_list_C . LexToken(END,'end',8,130)
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f3fbb9c6370>] and goto state 96
+   yacc.py: 506:Result : <list @ 0x7f3fbb9c6370> ([('ASSIGN', 'a', ('BINOP', '+', ('ID', ' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 96
+   yacc.py: 435:Stack  : WHILE expression DO statement_list . LexToken(END,'end',8,130)
+   yacc.py: 445:Action : Shift and goto state 103
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : WHILE expression DO statement_list END . LexToken(WHILE,'while',8,134)
+   yacc.py: 445:Action : Shift and goto state 107
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : WHILE expression DO statement_list END WHILE . $end
+   yacc.py: 471:Action : Reduce rule [statement -> WHILE expression DO statement_list END WHILE] with ['while',<tuple @ 0x7f3fbba1c9b0>,'do',<list @ 0x7f3fbb9c6370>,'end','while'] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f3fbb9b6410> (('WHILE', ('BINOP', '<', ('ID', 'a'), (' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 5
+   yacc.py: 435:Stack  : statement . $end
+   yacc.py: 471:Action : Reduce rule [statement_list_C -> statement] with [<tuple @ 0x7f3fbb9b6410>] and goto state 4
+   yacc.py: 506:Result : <list @ 0x7f3fbb9c6640> ([('WHILE', ('BINOP', '<', ('ID', 'a'), ( ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : statement_list_C . $end
+   yacc.py: 471:Action : Reduce rule [statement_list -> statement_list_C] with [<list @ 0x7f3fbb9c6640>] and goto state 2
+   yacc.py: 506:Result : <list @ 0x7f3fbb9c6640> ([('WHILE', ('BINOP', '<', ('ID', 'a'), ( ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 2
+   yacc.py: 430:Defaulted state 2: Reduce using 1
+   yacc.py: 435:Stack  : statement_list . $end
+   yacc.py: 471:Action : Reduce rule [program -> statement_list] with [<list @ 0x7f3fbb9c6640>] and goto state 1
+   yacc.py: 506:Result : <tuple @ 0x7f3fbb9c1910> (('BLOCK', [('WHILE', ('BINOP', '<', ('ID ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 1
+   yacc.py: 435:Stack  : program . $end
+   yacc.py: 571:Done   : Returning <tuple @ 0x7f3fbb9c1910> (('BLOCK', [('WHILE', ('BINOP', '<', ('ID ...)
+   yacc.py: 572:PLY: PARSE DEBUG END

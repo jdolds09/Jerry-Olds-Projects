@@ -1,0 +1,14 @@
+NorthernHemisphere,120.1,30.5,TRUE
+SouthernHemisphere,80,31.1,TRUE
+NorthernHemisphere,120,30.6,TRUE
+SouthernHemisphere,79.9,31.1,FALSE
+NorthernHemisphere,120,39.1,FALSE
+SouthernHemisphere,80,39.6,FALSE
+NorthernHemisphere,120,30.5,FALSE
+SouthernHemisphere,80,31,FALSE
+NorthernHemisphere,120,39,TRUE
+SouthernHemisphere,80,39.5,TRUE
+NorthernHemisphere,0,39.1,FALSE
+NorthernHemisphere,150,39.1,TRUE
+NorthernHemisphere,120,0,FALSE
+NorthernHemisphere,120,40,FALSE

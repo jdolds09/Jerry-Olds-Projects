@@ -1,0 +1,8 @@
+BLOCK (2)
+  WRITE (3)
+    ID 'a'
+    BINOP '+'
+      ID 'a'
+      ID 'b'
+    LITERAL 'STRING', 'A string'
+  WRITE (0)

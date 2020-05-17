@@ -1,0 +1,6 @@
+﻿  BlobCounterJO.cpp
+c:\users\jdold\desktop\set 3 program 4\set 3 program 4\blobcounterjo.cpp(56): warning C4101: 'count2': unreferenced local variable
+c:\users\jdold\desktop\set 3 program 4\set 3 program 4\blobcounterjo.cpp(58): warning C4101: 'next': unreferenced local variable
+c:\users\jdold\desktop\set 3 program 4\set 3 program 4\blobcounterjo.cpp(57): warning C4101: 'counter2': unreferenced local variable
+  Set 3 Program 4.vcxproj -> C:\Users\jdold\Desktop\Set 3 Program 4\Debug\Set 3 Program 4.exe
+  Set 3 Program 4.vcxproj -> C:\Users\jdold\Desktop\Set 3 Program 4\Debug\Set 3 Program 4.pdb (Full PDB)

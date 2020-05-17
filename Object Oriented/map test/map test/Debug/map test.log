@@ -1,0 +1,6 @@
+﻿  Transaction_List.cpp
+c:\users\jdold\desktop\map test\map test\transaction_list.cpp(56): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\map test\map test\transaction_list.cpp(66): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\map test\map test\transaction_list.cpp(76): warning C4018: '<': signed/unsigned mismatch
+  map test.vcxproj -> C:\Users\jdold\Desktop\map test\Debug\map test.exe
+  map test.vcxproj -> C:\Users\jdold\Desktop\map test\Debug\map test.pdb (Full PDB)

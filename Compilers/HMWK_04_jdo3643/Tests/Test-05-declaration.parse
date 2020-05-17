@@ -1,0 +1,25 @@
+BLOCK (6)
+  DECLARATION 'INT', 'a'
+    LITERAL 'INT', 0
+  DECLARATION 'REAL', 'b'
+    LITERAL 'REAL', 0.0
+  DECLARATION 'INT', 'c'
+    LITERAL 'INT', 17
+  DECLARATION 'REAL', 'd'
+    LITERAL 'REAL', 3.14159
+  DECLARATION 'INT', 'e'
+    BINOP '+'
+      LITERAL 'INT', 1
+      BINOP '/'
+        BINOP '*'
+          LITERAL 'INT', 2
+          LITERAL 'INT', 3
+        LITERAL 'INT', 4
+  DECLARATION 'REAL', 'f'
+    BINOP '+'
+      LITERAL 'REAL', 6.7
+      BINOP '/'
+        BINOP '*'
+          LITERAL 'REAL', 8.9
+          LITERAL 'REAL', 0.1
+        LITERAL 'REAL', 2.3

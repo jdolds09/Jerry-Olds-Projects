@@ -1,0 +1,114 @@
+Student(s) with highest GPA(s)
+
+Rick Rodriguez CS major 4.0 GPA
+Yunesh Shrestha CS major 4.0 GPA
+An San Suu Karki MATH major 4.0 GPA
+Man u'El Lynch SE major 4.0 GPA
+
+Unsorted: 
+
+Weng, Ahmad SE major.
+Vela, Tyler CS major.
+Nguyen, Victor EE major.
+Saad, Joel UENG major.
+Truong, Johnny PHYS major.
+Plumer, Juan SE major.
+Marquez, Justin CS major.
+Pradhan, Kendrick SE major.
+Rodriguez, Rick CS major.
+Sifuentes, Thomas CSE major.
+Heinen, Tiffany CS major.
+Ruckdeschell, Tre' CSE major.
+Jimenez, Vishal CS major.
+Shrestha, Yunesh CS major.
+Karki, An San Suu MATH major.
+Adedeji, Anita CS major.
+Sawall, Bakary CS major.
+Crist, Blake SE major.
+Camara, Chris CS major.
+Oniomoba, Daniel CSE major.
+Sayan, Jim Bob CSE major.
+Aceves, Ly Anna CS major.
+Lynch, Man u'El SE major.
+Kieu, Raju SE major.
+
+Sorted by Last Name: 
+
+Aceves, Ly Anna CS major
+Adedeji, Anita CS major
+Camara, Chris CS major
+Crist, Blake SE major
+Heinen, Tiffany CS major
+Jimenez, Vishal CS major
+Karki, An San Suu MATH major
+Kieu, Raju SE major
+Lynch, Man u'El SE major
+Marquez, Justin CS major
+Nguyen, Victor EE major
+Oniomoba, Daniel CSE major
+Plumer, Juan SE major
+Pradhan, Kendrick SE major
+Rodriguez, Rick CS major
+Ruckdeschell, Tre' CSE major
+Saad, Joel UENG major
+Sawall, Bakary CS major
+Sayan, Jim Bob CSE major
+Shrestha, Yunesh CS major
+Sifuentes, Thomas CSE major
+Truong, Johnny PHYS major
+Vela, Tyler CS major
+Weng, Ahmad SE major
+
+Unsorted: 
+
+Aceves, Ly Anna 03/01/91
+Adedeji, Anita 10/21/97
+Camara, Chris 03/02/99
+Crist, Blake 09/23/98
+Heinen, Tiffany 08/20/99
+Jimenez, Vishal 01/06/99
+Karki, An San Suu 11/22/98
+Kieu, Raju 06/11/99
+Lynch, Man u'El 03/21/99
+Marquez, Justin 12/26/94
+Nguyen, Victor 02/11/90
+Oniomoba, Daniel 09/03/99
+Plumer, Juan 01/03/99
+Pradhan, Kendrick 09/12/94
+Rodriguez, Rick 09/17/98
+Ruckdeschell, Tre' 08/15/99
+Saad, Joel 03/16/99
+Sawall, Bakary 07/26/99
+Sayan, Jim Bob 10/02/98
+Shrestha, Yunesh 05/30/99
+Sifuentes, Thomas 08/12/99
+Truong, Johnny 01/29/99
+Vela, Tyler 06/18/94
+Weng, Ahmad 01/11/90
+
+Sorted by Birthdate: 
+
+Weng, Ahmad 01/11/90
+Nguyen, Victor 02/11/90
+Aceves, Ly Anna 03/01/91
+Vela, Tyler 06/18/94
+Pradhan, Kendrick 09/12/94
+Marquez, Justin 12/26/94
+Adedeji, Anita 10/21/97
+Rodriguez, Rick 09/17/98
+Crist, Blake 09/23/98
+Sayan, Jim Bob 10/02/98
+Karki, An San Suu 11/22/98
+Plumer, Juan 01/03/99
+Jimenez, Vishal 01/06/99
+Truong, Johnny 01/29/99
+Camara, Chris 03/02/99
+Saad, Joel 03/16/99
+Lynch, Man u'El 03/21/99
+Shrestha, Yunesh 05/30/99
+Kieu, Raju 06/11/99
+Sawall, Bakary 07/26/99
+Sifuentes, Thomas 08/12/99
+Ruckdeschell, Tre' 08/15/99
+Heinen, Tiffany 08/20/99
+Oniomoba, Daniel 09/03/99

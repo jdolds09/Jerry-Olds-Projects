@@ -1,0 +1,21 @@
+CSE 1325 - Object Oriented 
+
+Programming 
+
+Assignment: 
+
+Homework 1
+
+
+
+Command line to build the assignment:
+
+
+g++ jdo3643_Hello_World_1.cpp -o hw1
+
+
+
+Command line to run the assignment:
+
+
+./hw1

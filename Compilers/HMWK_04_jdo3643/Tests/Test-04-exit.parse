@@ -1,0 +1,5 @@
+BLOCK (2)
+  EXIT
+    LITERAL 'INT', 0
+  EXIT
+    LITERAL 'INT', 17

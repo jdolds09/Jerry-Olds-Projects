@@ -1,0 +1,6 @@
+﻿  AllMagicSquaresJO.cpp
+c:\users\jerry olds\desktop\c++ 2 electric boogaloo\set 1 program 4\set 1 program 4\allmagicsquaresjo.cpp(20): warning C4101: 'count': unreferenced local variable
+c:\users\jerry olds\desktop\c++ 2 electric boogaloo\set 1 program 4\set 1 program 4\allmagicsquaresjo.cpp(157): warning C4018: '<=': signed/unsigned mismatch
+c:\users\jerry olds\desktop\c++ 2 electric boogaloo\set 1 program 4\set 1 program 4\allmagicsquaresjo.cpp(204): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Set 1 Program 4.vcxproj -> C:\Users\Jerry Olds\Desktop\C++ 2 Electric Boogaloo\Set 1 Program 4\Debug\Set 1 Program 4.exe
+  Set 1 Program 4.vcxproj -> C:\Users\Jerry Olds\Desktop\C++ 2 Electric Boogaloo\Set 1 Program 4\Debug\Set 1 Program 4.pdb (Full PDB)

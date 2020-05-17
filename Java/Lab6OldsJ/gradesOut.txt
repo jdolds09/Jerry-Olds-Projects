@@ -1,0 +1,76 @@
+Unsorted
+Weng, Ahmad: 70.55
+Vela, Tyler: 80.69
+Baysinger, Aerina: 66.29
+Williams, Tyler: 78.73
+Nguyen, Victor: 67.29
+Saad, Joel: 73.79
+Truong, Johnny: 64.53
+Alabedredha, Jola: 58.14
+Plumer, Juan: 79.90
+Marquez, Justin: 71.35
+Pradhan, Kendrick: 35.66
+Rodriguez, Rick: 80.93
+Shakya, Ryan: 72.95
+Ajayi, Sabreen: 56.17
+Sifuentes, Thomas: 70.16
+Heinen, Tiffany: 65.33
+Ruckdeschell, Tre': 37.30
+Jimenez, Vishal: 61.56
+Shrestha, Yunesh: 83.56
+Karki, An San Suu: 84.49
+Adedeji, Anita: 65.32
+Sawall, Bakary: 73.83
+Crist, Blake: 45.11
+Camara, Chris: 49.08
+Oniomoba, Daniel: 74.89
+Ly, Francisco: 71.94
+Barron, Hoang: 56.52
+Sayan, Jim Bob: 55.24
+Lewis, Leko: 69.49
+Aceves, Ly Anna: 66.09
+Lynch, Man u'El: 75.47
+Kurhan, At'Lantic: 76.78
+Kieu, Raju: 63.56
+
+Sorted
+Aceves, Ly Anna: 66.09
+Adedeji, Anita: 65.32
+Ajayi, Sabreen: 56.17
+Alabedredha, Jola: 58.14
+Barron, Hoang: 56.52
+Baysinger, Aerina: 66.29
+Camara, Chris: 49.08
+Crist, Blake: 45.11
+Heinen, Tiffany: 65.33
+Jimenez, Vishal: 61.56
+Karki, An San Suu: 84.49
+Kieu, Raju: 63.56
+Kurhan, At'Lantic: 76.78
+Lewis, Leko: 69.49
+Ly, Francisco: 71.94
+Lynch, Man u'El: 75.47
+Marquez, Justin: 71.35
+Nguyen, Victor: 67.29
+Oniomoba, Daniel: 74.89
+Plumer, Juan: 79.90
+Pradhan, Kendrick: 35.66
+Rodriguez, Rick: 80.93
+Ruckdeschell, Tre': 37.30
+Saad, Joel: 73.79
+Sawall, Bakary: 73.83
+Sayan, Jim Bob: 55.24
+Shakya, Ryan: 72.95
+Shrestha, Yunesh: 83.56
+Sifuentes, Thomas: 70.16
+Truong, Johnny: 64.53
+Vela, Tyler: 80.69
+Weng, Ahmad: 70.55
+Williams, Tyler: 78.73
+
+Class Average: 66.75
+Highest Score in the Class: 84.49
+Lowest Score in the Class: 35.66
+
+Median Score: 67.29
+

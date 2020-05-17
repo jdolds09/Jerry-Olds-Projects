@@ -1,0 +1,7 @@
+﻿  FinalExamJO.cpp
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\final exam\final exam\finalexamjo.cpp(110): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\final exam\final exam\finalexamjo.cpp(151): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\final exam\final exam\finalexamjo.cpp(315): warning C4715: 'Poker::straightFlush': not all control paths return a value
+c:\users\jdold\desktop\code\c++ 2 electric boogaloo\final exam\final exam\finalexamjo.cpp(474): warning C4715: 'Poker::straight': not all control paths return a value
+  Final Exam.vcxproj -> C:\Users\jdold\Desktop\Code\C++ 2 Electric Boogaloo\Final Exam\x64\Debug\Final Exam.exe
+  Final Exam.vcxproj -> C:\Users\jdold\Desktop\Code\C++ 2 Electric Boogaloo\Final Exam\x64\Debug\Final Exam.pdb (Full PDB)

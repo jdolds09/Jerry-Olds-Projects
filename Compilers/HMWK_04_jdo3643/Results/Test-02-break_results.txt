@@ -1,0 +1,11 @@
+#----------
+# Begin at 2020-05-05 18:07:02
+# Reading source file 'Test-02-break.asl' ...
+#    Read succeeded.  (0.000s)
+# Beginning parse ...
+#    Parse succeeded.  (0.008s)
+# Beginning parse tree dump to 'Test-02-break.parse' ...
+#    Parse dumped.  (0.000s)
+# End at 2020-05-05 18:07:02
+# Total time 0.009s.
+#----------

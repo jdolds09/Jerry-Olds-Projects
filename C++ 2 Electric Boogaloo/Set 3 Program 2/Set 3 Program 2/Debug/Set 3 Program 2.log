@@ -1,0 +1,5 @@
+﻿  RecMedianJO.cpp
+c:\users\jerry olds\desktop\set 3 program 2\set 3 program 2\recmedianjo.cpp(60): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\jerry olds\desktop\set 3 program 2\set 3 program 2\recmedianjo.cpp(69): warning C4715: 'findMedian': not all control paths return a value
+  Set 3 Program 2.vcxproj -> C:\Users\Jerry Olds\Desktop\Set 3 Program 2\Debug\Set 3 Program 2.exe
+  Set 3 Program 2.vcxproj -> C:\Users\Jerry Olds\Desktop\Set 3 Program 2\Debug\Set 3 Program 2.pdb (Full PDB)

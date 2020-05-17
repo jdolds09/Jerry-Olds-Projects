@@ -1,0 +1,6 @@
+## Interface: 11302
+## Title: MageInvite
+## Author: Jerryatric (Supremacy-Whitemane)
+## Version: 1.0
+
+MageInviter.lua

@@ -1,0 +1,58 @@
+BLOCK (9)
+  DECLARATION 'INT', 'original'
+    LITERAL 'INT', 0
+  DECLARATION 'INT', 'n'
+    LITERAL 'INT', 0
+  DECLARATION 'INT', 'fact'
+    LITERAL 'INT', 1
+  WRITE (1)
+    LITERAL 'STRING', 'Enter a number'
+  READ (1)
+    'original'
+  IF-NO-ELSE
+    BINOP '<='
+      ID 'n'
+      LITERAL 'INT', 0
+    BLOCK (2)
+      WRITE (3)
+        LITERAL 'STRING', 'n must be > 0, '
+        ID 'original'
+        LITERAL 'STRING', "isn't."
+      EXIT
+        UNOP '-'
+          LITERAL 'INT', 1
+  ASSIGN 'n'
+    ID 'original'
+  WHILE
+    BINOP '>'
+      ID 'n'
+      LITERAL 'INT', 1
+    BLOCK (2)
+      ASSIGN 'fact'
+        BINOP '*'
+          ID 'fact'
+          ID 'n'
+      ASSIGN 'n'
+        BINOP '-'
+          ID 'n'
+          LITERAL 'INT', 1
+  IF
+    BINOP '=='
+      ID 'fact'
+      UNOP '!'
+        ID 'original'
+    BLOCK (1)
+      WRITE (4)
+        LITERAL 'STRING', 'We agree! '
+        ID 'original'
+        LITERAL 'STRING', ' factorial is '
+        ID 'fact'
+    BLOCK (1)
+      WRITE (6)
+        LITERAL 'STRING', 'Oops!  '
+        ID 'original'
+        LITERAL 'STRING', '! is '
+        UNOP '!'
+          ID 'original'
+        LITERAL 'STRING', ', while computed is '
+        ID 'fact'

@@ -1,0 +1,19 @@
+﻿  jdo3643_main.cpp
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(81): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(87): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(93): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(99): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(105): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(129): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(135): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(141): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(147): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(565): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(583): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(589): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(595): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(601): warning C4018: '<': signed/unsigned mismatch
+c:\users\jdold\desktop\library project\library project\jdo3643_main.cpp(607): warning C4018: '<': signed/unsigned mismatch
+  Library Project.vcxproj -> C:\Users\jdold\Desktop\Library Project\Debug\Library Project.exe
+  Library Project.vcxproj -> C:\Users\jdold\Desktop\Library Project\Debug\Library Project.pdb (Full PDB)

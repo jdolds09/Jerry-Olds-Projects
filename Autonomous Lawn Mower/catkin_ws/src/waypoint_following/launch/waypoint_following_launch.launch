@@ -1,0 +1,3 @@
+<launch>
+	<node pkg="waypoint_following" type="waypoint_nav.py" name="waypoint_nav" output="screen" args="$(find waypoint_following)/src/mission.waypoints" />
+</launch>

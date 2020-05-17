@@ -1,0 +1,318 @@
+#----------------------------------------------------------------------
+Programming Assignment 04
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate additional understanding of lexical and syntactic
+    analysis fundamentals.
+
+  * Demonstrate additional (simple) Python programming skills.
+
+#----------------------------------------------------------------------
+Background:
+
+  * The template included with this assignment shows the essential
+    structure for lexical and syntactic analysis stages of a
+    Ply-based parse.
+
+  * All of the lexical forms (and some of the syntactic forms)
+    have been provided.
+
+  * The goal is to complete the remaining syntactic forms such
+    that a complete parse tree is generated (and dumped).
+
+  * There is a large amount of background information in the
+    ASL-version-1-1.txt file.
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download HMWK_04_dalioba.zip from Canvas.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your NetID.
+     (Your NetID is three letters followed by four or five digits.
+      The directory name will now be something like
+      'hmwk_04_abc1234'.)
+
+  4. Look in that directory.
+
+  5. Change the header lines in the provided Python file so that
+     they match your information as follows:
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file in the format
+                  YYYY-MM-DD.
+
+     These must remain the first three lines of each file.
+
+  6. Run the template on Tests/Test-00.asl.  You should see the
+     following (with different date/times, of course),
+
+        $ python hmwk_04.py Tests/Test-00.asl
+        #----------
+        # Begin at 2020-05-03 10:48:28
+        # Reading source file 'Tests/Test-00.asl' ...
+        #    Read succeeded.  (0.000s)
+        # Beginning parse ...
+        WARNING: Token 'BREAK' defined, but not used
+        WARNING: Token 'CONTINUE' defined, but not used
+        WARNING: Token 'DO' defined, but not used
+        WARNING: Token 'ELSE' defined, but not used
+        WARNING: Token 'END' defined, but not used
+        WARNING: Token 'EXIT' defined, but not used
+        WARNING: Token 'IF' defined, but not used
+        WARNING: Token 'INT' defined, but not used
+        WARNING: Token 'READ' defined, but not used
+        WARNING: Token 'REAL' defined, but not used
+        WARNING: Token 'THEN' defined, but not used
+        WARNING: Token 'WHILE' defined, but not used
+        WARNING: Token 'WRITE' defined, but not used
+        WARNING: hmwk_04.py:335: Rule 'expression_list' defined, but not used
+        WARNING: There are 13 unused tokens
+        WARNING: There is 1 unused rule
+        WARNING: Symbol 'expression_list' is unreachable
+        WARNING: Symbol 'expression_list_B' is unreachable
+        WARNING: Symbol 'id_list' is unreachable
+        Generating LALR tables
+        WARNING: 400 shift/reduce conflicts
+        #    Parse succeeded.  (0.178s)
+        # Beginning parse tree dump to 'Tests/Test-00.parse' ...
+        #    Parse dumped.  (0.000s)
+        # End at 2020-05-03 10:48:28
+        # Total time 0.178s.
+        #----------
+        $
+
+     Notice that there are numerous errors, including a large (!)
+     number of conflicts.  This is caused by the template having
+     many missing definitions of precedence declarations and
+     production rules.
+
+  7. There are a number of TODO sections.  (Don't be dismayed by
+     how many there are;  the majority of them are absolutely
+     trivial to complete.)
+
+     The following is probably the best order in which to complete
+     the TODO sections.
+
+     Completing this one will eliminate all of the conflicts in
+     the grammar.
+
+hmwk_04.py:177:  # TODO: Using the information from the ASL description, put the
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+  Be ABSOLUTELY certain that your solution has no conflicts.  Any
+  solution with conflicts will score ZERO credit.  Be certain that
+  you test your solution starting from scratch each time so you
+  will see the appropriate messages from Ply.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+     Completing these next four will allow you write any
+     expression in an ASSIGN statement.  The BINOP and two UNOPs
+     are absolutely trivial.  You may have to think a little about
+     the LITERAL, but even it is not that hard.
+
+hmwk_04.py:302:  # TODO: Parse form construction for a BINOP.
+hmwk_04.py:309:  # TODO: Parse form construction for a UNOP.
+hmwk_04.py:314:  # TODO: Parse form construction for a UNOP.
+hmwk_04.py:324:  # TODO: Parse form construction for a LITERAL.
+
+     Build your confidence by doing these four next.  They are
+     absolutely trivial.
+
+hmwk_04.py:198:  # TODO: Production rule for the BREAK statement.
+hmwk_04.py:199:  # TODO: Parse form construction for the BREAK statement.
+hmwk_04.py:203:  # TODO: Production rule for the CONTINUE statement.
+hmwk_04.py:204:  # TODO: Parse form construction for the CONTINUE statement.
+
+     Not that hard.  There are two forms for the EXIT statement,
+     one with an expression and one without.  For simplicity,
+     these have been broken into two routines.  This really does
+     make it easier to write.
+
+hmwk_04.py:224:  # TODO: Production rule for the EXIT statement WITHOUT an
+hmwk_04.py:226:  # TODO: Parse form construction for the EXIT statement WITHOUT
+hmwk_04.py:231:  # TODO: Production rule for the EXIT statement WITH an
+hmwk_04.py:233:  # TODO: Parse form construction for the EXIT statement WITH an
+
+     Also not that hard, but you do have to deal with an optional
+     part (the initializer expression), the default for which
+     depends on the type.
+
+hmwk_04.py:208:  # TODO: Production rule for the DECLARATION statement.
+hmwk_04.py:211:  # TODO: Parse form construction for the DECLARATION statement.
+hmwk_04.py:216:  # TODO: Production rule for the optional initializer expression.
+hmwk_04.py:217:  # TODO: Parse form construction for the optional initializer
+
+     Not as trivial as BREAK and CONTINUE, but almost.
+
+hmwk_04.py:266:  # TODO: Production rule for the READ statement.  (Use id_list to
+hmwk_04.py:268:  # TODO: Parse form construction for the READ statement.
+
+     Not as trivial as BREAK and CONTINUE, but almost.
+
+hmwk_04.py:272:  # TODO: Production rule for the WHILE statement.
+hmwk_04.py:273:  # TODO: Parse form construction for the WHILE statement.
+
+     Not as trivial as BREAK and CONTINUE, but almost.
+
+hmwk_04.py:277:  # TODO: Production rule for the WRITE statement.  (Use
+hmwk_04.py:279:  # TODO: Parse form construction for the WRITE statement.
+
+     The most complex statement, as its processing requires the
+     detection of four separate cases.  Has an optional part, the
+     ELSE side, but also requires detecting whether the two parts,
+     THEN and ELSE, have zero statements in them and generating
+     the correct parse form.
+
+hmwk_04.py:239:  # TODO: Production rule for the IF statement. Don't forget that
+hmwk_04.py:241:  # TODO: Parse form construction for the IF statement.
+hmwk_04.py:259:  # TODO: Production rule for the optional ELSE part.
+hmwk_04.py:260:  # TODO: Parse form construction for the optional ELSE part.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+  Your *.parse files should be IDENTICAL to the corresponding
+  files in Results/.  If they are not -- even off by a SINGLE
+  character -- stop and investigate why.  Do not proceed to any
+  additional work until you identify why the discrepancy occurred
+  and fix it.
+
+  The *_results.txt files won't be the same -- these file include
+  times / dates.  They are provided so you can see what successful
+  runs look like.
+
+  The *-parselog.txt files are debug files -- they show the trace
+  of how each of the tests was processed.  They are useful if you
+  see a difference in a *.parse file and want to know if your
+  parsing is going correctly.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_04_abc1234' directory (where
+'abc1234' is replaced with YOUR NetID) and submit it on Canvas
+as your results for this assignment.
+
+Your submission should be a zipfile that has exactly one item in
+it, a directory named 'hmwk_04_abc1234' (where 'abc1234' is YOUR
+NetID).  Inside that directory should be hmwk_04.py.  (You don't
+have to include any other files, as you should not change anything
+in those files.)
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your program compiles and runs correctly.  Not
+     compiling or not generating the correct output will cost you
+     points.
+
+     Test your code for Shift / Reduce and Reduce / Reduce
+     conflicts CAREFULLY (and from scratch each time!).  Any
+     conflicts whatsoever will result in a ZERO score for this
+     assignment.
+
+     Ensure your output for each test is the same as the
+     corrsponding Results/*.parse file.  It must match EXACTLY.
+
+     After you write your programs, use diff to compare your
+     output to the supplied results files.  It must match EXACTLY
+     or you will be penalized points.
+
+     ('EXACTLY' means character-by-character the same.)
+
+  2. Ensure that you update the three header lines in the source
+     file with YOUR name (family name first, then a comma, then
+     your personal name), YOUR NetID, and the date you edit the
+     file (in the format YYYY-MM-DD).  The header lines must be
+     the first three lines in the file.
+
+     Not updating the header lines properly will cost you points.
+
+     Not having the header lines as the first three lines of the
+     file will cost you points.
+
+  3. This is not a lot of work.  Though there are a bunch of TODO
+     sections, the majority of them are trivial.
+
+[13] hmwk_04.py:177:  # TODO: Using the information from the ASL description, put the
+[ 1] hmwk_04.py:198:  # TODO: Production rule for the BREAK statement.
+[ 1] hmwk_04.py:199:  # TODO: Parse form construction for the BREAK statement.
+[ 1] hmwk_04.py:203:  # TODO: Production rule for the CONTINUE statement.
+[ 1] hmwk_04.py:204:  # TODO: Parse form construction for the CONTINUE statement.
+[ 2] hmwk_04.py:208:  # TODO: Production rule for the DECLARATION statement.
+[ 7] hmwk_04.py:211:  # TODO: Parse form construction for the DECLARATION statement.
+[ 2] hmwk_04.py:216:  # TODO: Production rule for the optional initializer expression.
+[ 1] hmwk_04.py:217:  # TODO: Parse form construction for the optional initializer
+[ 1] hmwk_04.py:224:  # TODO: Production rule for the EXIT statement WITHOUT an
+[ 1] hmwk_04.py:226:  # TODO: Parse form construction for the EXIT statement WITHOUT
+[ 1] hmwk_04.py:231:  # TODO: Production rule for the EXIT statement WITH an
+[ 1] hmwk_04.py:233:  # TODO: Parse form construction for the EXIT statement WITH an
+[ 1] hmwk_04.py:239:  # TODO: Production rule for the IF statement. Don't forget that
+[10] hmwk_04.py:241:  # TODO: Parse form construction for the IF statement.
+[ 2] hmwk_04.py:259:  # TODO: Production rule for the optional ELSE part.
+[ 1] hmwk_04.py:260:  # TODO: Parse form construction for the optional ELSE part.
+[ 1] hmwk_04.py:266:  # TODO: Production rule for the READ statement.  (Use id_list to
+[ 1] hmwk_04.py:268:  # TODO: Parse form construction for the READ statement.
+[ 1] hmwk_04.py:272:  # TODO: Production rule for the WHILE statement.
+[ 1] hmwk_04.py:273:  # TODO: Parse form construction for the WHILE statement.
+[ 1] hmwk_04.py:277:  # TODO: Production rule for the WRITE statement.  (Use
+[ 1] hmwk_04.py:279:  # TODO: Parse form construction for the WRITE statement.
+[ 1] hmwk_04.py:302:  # TODO: Parse form construction for a BINOP.
+[ 1] hmwk_04.py:309:  # TODO: Parse form construction for a UNOP.
+[ 1] hmwk_04.py:314:  # TODO: Parse form construction for a UNOP.
+[ 7] hmwk_04.py:324:  # TODO: Parse form construction for a LITERAL.
+
+
+     for a grand total of 63 lines of code.  Easy!
+
+  4. After you complete your work, make up some test cases of your
+     own to ensure that your scanning and parsing really matches
+     the required precedence and associativity and that your parse
+     forms are as to be expected.
+     The test cases in Tests/ are useful, but they are NOT
+     comprehensive.  Make up some more of your own.
+
+     It's OK to share test cases and expected results files with
+     other students, but do NOT violate the Honor Code as regards
+     your programming work.  Do NOT share details of your
+     programming, review other students' work, etc.
+
+  5. Ensure your submission to Canvas is packaged EXACTLY as
+     described above.
+
+      -- Your submission should be a ZIP FILE (not a tar, rar, gz,
+         or any other kind of compressed file).
+
+      -- The zip file should be named 'hmwk_04_abc1234.zip' (with
+         'abc1234' replaced with YOUR NetID).
+
+      -- This zip file should have ONE item in it, a directory
+         named 'hmwk_04_abc1234'  (with 'abc1234' replaced with
+         YOUR NetID).
+
+      -- Your source file hmwk_04.py should be in that directory.
+
+     Submissions in the wrong format score ZERO points.
+
+  6. After you submit your zip file on Canvas, download it from
+     Canvas into an empty directory and check that your submission
+     is in the proper format, that the program runs without any
+     conflicts or errors and that it produces the correct output,
+     and that you updated the header lines correctly.
+
+  7. Are you CERTAIN you complied with all of these nit-picking
+     instructions?  Really?  Maybe you ought to check just one
+     more time. :)
+
+#----------------------------------------------------------------------

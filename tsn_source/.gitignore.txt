@@ -1,0 +1,13 @@
+# idlpp generated files
+standalone/
+
+# OpenSplice logs
+*.log
+
+# built executables
+tsn
+testcases
+
+# build objects
+obj/
+*.o

@@ -1,0 +1,16 @@
+CSE 1325 - Object Oriented Programming
+
+Assignment:
+Homework 7
+
+Command line to build jdo3643_main1:
+make 1
+
+Command line to run jdo3643_main1:
+./a.out
+
+Command line to build jdo3643_main2:
+make 2
+
+Command line to run jdo3643_main1:
+./a.out

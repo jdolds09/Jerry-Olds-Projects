@@ -1,0 +1,18 @@
+﻿  main.cpp
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(81): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(98): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(149): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(166): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(191): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(218): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(235): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(260): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(287): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(304): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(329): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(359): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(376): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\jdold\desktop\homework 7 part 2\homework 7 part 2\main.cpp(405): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Homework 7 part 2.vcxproj -> C:\Users\jdold\Desktop\Homework 7 part 2\Debug\Homework 7 part 2.exe
+  Homework 7 part 2.vcxproj -> C:\Users\jdold\Desktop\Homework 7 part 2\Debug\Homework 7 part 2.pdb (Full PDB)

@@ -1,0 +1,202 @@
+#----------------------------------------------------------------------
+Programming Assignment 01
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate a working assembly language environment and an
+    understanding of (simple) x86 assembly language programming by
+    writing and running some simple functions.
+
+#----------------------------------------------------------------------
+Background:
+
+  * Ultimately we will be generating assembly language versions of
+    source programs.  This assembler code will require a suitable
+    environment for processing.
+
+  * The assembler we will use is GNU's gas, as provided in the
+    binutils package.  (The latest version of the binutils
+    package is 2.34.)
+
+      https://www.gnu.org/software/binutils/
+
+  * Information on how to write these routines is provided in
+    the A02 Assembly Language Programming handout, available on
+    Canvas.
+
+  * Source code for the examples given in the handout is provided
+    in the Assembly-2020-02-26.zip file, also available on Canvas.
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download HMWK_01_dalioba.zip from Blackboard.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your
+     NetID.  (Your NetID is three letters followed by four or
+     five digits.  The directory name will now be something
+     like 'HMWK_01_abc1234'.)
+
+  4. Look in that directory for these instructions.  (Well, I
+     suppose you already did as you are reading these instructions
+     right now.)
+
+  5. Copy the useful_libc.s and useful_test.c files from
+     Assembly-2020-02-26.zip and put them in this directory.
+
+     useful_test.c is a test harness that will exercise the
+     routines you write.
+
+     useful_libc.s is a template with the framework necessary for
+     the seven assembly language routines you have to write:
+
+        int readInteger( int *np )
+        int readReal( double *dp )
+        int writeBoolean( int b )
+        int writeInteger( int n )
+        int writeNewLine()
+        int writeReal( double d )
+        int writeString( char *str )
+
+     There are various places stating "Put something here!".
+     That's where your code / data goes.
+
+     Each of your assembly language routines should return 1 for
+     success and 0 for failure.
+
+     Take a look at the definitions of printf and scanf to see
+     what the definitions of success / failure are.
+
+  6.  Don't forget to update the standard three header lines at the
+     top with YOUR name, NetID, and the date!
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file in the format
+                  YYYY-MM-DD.
+
+     These must remain the first three lines of each file.
+
+  7. DO NOT JUST SUBMIT THE ASSEMBLY OUTPUT OF GCC ON useful.c AS
+     YOUR CODE!  You must write your own versions that will run as
+     STATIC code.  Comment your code so the purpose of each
+     instruction is clearly indicated.
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_01_abc1234' directory (where
+'abc1234' is replaced with YOUR NetID) and submit it on Canvas
+as your results for this assignment.
+
+Your submission should be a zipfile that has exactly one item in
+it, a directory named 'hmwk_01_abc1234' (where 'abc1234' is YOUR
+NetID).  Inside that directory should be the source file for
+your solution, useful_libc.s.
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your submission is packaged EXACTLY as described
+     above.  Submissions in the wrong format score ZERO points.
+
+  2. Each of the routines you have to write will start with the
+     same two-instruction prologue and end with the same
+     two-instruction epilogue:
+
+  pushq   %rbp          # Save old base (frame) ptr
+  movq    %rsp, %rbp    # Make the current stack ptr the base (frame) ptr
+
+  ...
+
+  leave                 # Disestablish stack frame
+  ret                   # Return to caller;  (integer) result in %eax
+
+  3. If you need stack space for local variables, do this as the
+     third instruction of the prologue:
+
+  subq    $nn, %rsp     # Get some space for locals
+
+     Replace nn with the number of bytes of local storage that you
+     need.  (Remember that this must be a multiple of 16 to keep
+     the stack aligned!)
+
+     (You don't have to undo this explicitly on exit as the
+      'leave' instruction in the epilogue will take care of that.)
+
+  4. Take care to convert the result of each operation to 1 for
+     success and 0 for failure and return that 1 or 0 as the
+     result of your routines.
+
+     Be careful to keep track of this result across any other
+     operation that is done!  Remember that each called routine
+     might alter a number of registers so you should keep this
+     result somewhere safe until you need it.
+
+  5. useful_test.c is a C program that will exercise your
+     routines.  Compile your assembly file and link it with this
+     test routine as shown in the comments on lines 5-7 in that
+     file.  You should not change ANYTHING in useful_test.c;  just
+     compile and link it with your routines.
+
+
+  6. Here's what the output of useful_test.c looks like when run
+     with the reference routines:
+
+Just a test: intVal = 0xDEADBEEF, fpVal = nan
+Type an integer: 123
+Success!  Read 123
+Type a real: 123.456
+Success!  Read 123.456000
+Write an integer [123] Success!
+<Not followed by newline ... yet>
+Success!  newline printed
+Write a real [123.456000] Success!
+<Here's a string with no newline>Success!  string printed
+Write a zero-length string [] Success!  string printed
+
+     For this run, I typed 123 as the integer input and 123.456 as
+     the real input.
+
+  7. These are not big routines.  Aside from the prologue and
+     epilogue (two instructions each), the reference versions
+     have these many instructions:
+
+        readInteger   -  4
+        readReal      -  4
+        writeBoolean  - 14
+        writeInteger  - 11
+        writeNewLine  -  9
+        writeReal     - 10
+        writeString   - 11
+
+     You DO NOT have to use EXACTLY this many instructions, but
+     if you find yourself writing lots more code than this, you're
+     probably off in the weeds.  (And I am EXTREMELY curious to
+     know if you can do it in fewer instructions. :)
+
+     (There's one extra routine here, writeBoolean, that is not on
+      the slides.  It's no big deal.  It takes an integer argument
+      and prints false if it's 0 and true if it's anything else.)
+
+  8. As a freebie, here's how to flush stdout:
+
+  movq    stdout, %rdi  # Arg 1: stdout
+  call    fflush        # fflush( FILE *stream )
+
+     OK, now write the rest of the routines by yourself!
+
+  9. fsync is NOT the same as fflush.  See, e.g., this explanation
+     for the difference:
+
+     https://stackoverflow.com/questions/2340610/difference-between-fflush-and-fsync
+
+     Notice that fsync does NOT flush FILE * buffers to the OS, which
+     is really what we're after.
+
+#----------------------------------------------------------------------

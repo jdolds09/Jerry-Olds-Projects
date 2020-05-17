@@ -1,0 +1,5 @@
+Assignment ops file: tower_hanoi_ops.txt
+Assignment facts files: tower_hanoi_facts.txt tower_hanoi_facts2.txt
+Assignment common statments file: tower_of_hanoi_common.txt
+How to run: ./graphplan -o tower_hanoi_ops.txt -f tower_hanoi_facts.txt
+            ./graphplan -o tower_hanoi_ops.txt -f tower_hanoi_facts2.txt 

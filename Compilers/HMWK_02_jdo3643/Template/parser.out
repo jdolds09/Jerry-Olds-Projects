@@ -1,0 +1,670 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> ID ASSIGN expression
+Rule 2     statement -> expression
+Rule 3     expression -> expression PLUS expression
+Rule 4     expression -> expression MINUS expression
+Rule 5     expression -> expression MULTIPLY expression
+Rule 6     expression -> expression DIVIDE expression
+Rule 7     expression -> expression MODULO expression
+Rule 8     expression -> expression EXPONENT expression
+Rule 9     expression -> MINUS expression
+Rule 10    expression -> PLUS expression
+Rule 11    expression -> LPAREN expression RPAREN
+Rule 12    expression -> INTEGER
+Rule 13    expression -> REAL
+Rule 14    expression -> ID
+
+Terminals, with rules where they appear
+
+ASSIGN               : 1
+DIVIDE               : 6
+EXPONENT             : 8
+ID                   : 1 14
+INTEGER              : 12
+LPAREN               : 11
+MINUS                : 4 9
+MODULO               : 7
+MULTIPLY             : 5
+PLUS                 : 3 10
+REAL                 : 13
+RPAREN               : 11
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 2 3 3 4 4 5 5 6 6 7 7 8 8 9 10 11
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . ID ASSIGN expression
+    (2) statement -> . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    ID              shift and go to state 2
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+
+    statement                      shift and go to state 1
+    expression                     shift and go to state 3
+
+state 1
+
+    (0) S' -> statement .
+
+
+
+state 2
+
+    (1) statement -> ID . ASSIGN expression
+    (14) expression -> ID .
+
+    ASSIGN          shift and go to state 9
+    PLUS            reduce using rule 14 (expression -> ID .)
+    MINUS           reduce using rule 14 (expression -> ID .)
+    MULTIPLY        reduce using rule 14 (expression -> ID .)
+    DIVIDE          reduce using rule 14 (expression -> ID .)
+    MODULO          reduce using rule 14 (expression -> ID .)
+    EXPONENT        reduce using rule 14 (expression -> ID .)
+    $end            reduce using rule 14 (expression -> ID .)
+
+
+state 3
+
+    (2) statement -> expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    $end            reduce using rule 2 (statement -> expression .)
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+
+state 4
+
+    (10) expression -> PLUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 16
+
+state 5
+
+    (9) expression -> MINUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 18
+
+state 6
+
+    (11) expression -> LPAREN . expression RPAREN
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 19
+
+state 7
+
+    (12) expression -> INTEGER .
+
+    PLUS            reduce using rule 12 (expression -> INTEGER .)
+    MINUS           reduce using rule 12 (expression -> INTEGER .)
+    MULTIPLY        reduce using rule 12 (expression -> INTEGER .)
+    DIVIDE          reduce using rule 12 (expression -> INTEGER .)
+    MODULO          reduce using rule 12 (expression -> INTEGER .)
+    EXPONENT        reduce using rule 12 (expression -> INTEGER .)
+    $end            reduce using rule 12 (expression -> INTEGER .)
+    RPAREN          reduce using rule 12 (expression -> INTEGER .)
+
+
+state 8
+
+    (13) expression -> REAL .
+
+    PLUS            reduce using rule 13 (expression -> REAL .)
+    MINUS           reduce using rule 13 (expression -> REAL .)
+    MULTIPLY        reduce using rule 13 (expression -> REAL .)
+    DIVIDE          reduce using rule 13 (expression -> REAL .)
+    MODULO          reduce using rule 13 (expression -> REAL .)
+    EXPONENT        reduce using rule 13 (expression -> REAL .)
+    $end            reduce using rule 13 (expression -> REAL .)
+    RPAREN          reduce using rule 13 (expression -> REAL .)
+
+
+state 9
+
+    (1) statement -> ID ASSIGN . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 20
+
+state 10
+
+    (3) expression -> expression PLUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 21
+
+state 11
+
+    (4) expression -> expression MINUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 22
+
+state 12
+
+    (5) expression -> expression MULTIPLY . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 23
+
+state 13
+
+    (6) expression -> expression DIVIDE . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 24
+
+state 14
+
+    (7) expression -> expression MODULO . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 25
+
+state 15
+
+    (8) expression -> expression EXPONENT . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression MODULO expression
+    (8) expression -> . expression EXPONENT expression
+    (9) expression -> . MINUS expression
+    (10) expression -> . PLUS expression
+    (11) expression -> . LPAREN expression RPAREN
+    (12) expression -> . INTEGER
+    (13) expression -> . REAL
+    (14) expression -> . ID
+
+    MINUS           shift and go to state 5
+    PLUS            shift and go to state 4
+    LPAREN          shift and go to state 6
+    INTEGER         shift and go to state 7
+    REAL            shift and go to state 8
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 26
+
+state 16
+
+    (10) expression -> PLUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 10 (expression -> PLUS expression .)
+    MINUS           reduce using rule 10 (expression -> PLUS expression .)
+    $end            reduce using rule 10 (expression -> PLUS expression .)
+    RPAREN          reduce using rule 10 (expression -> PLUS expression .)
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+  ! MULTIPLY        [ reduce using rule 10 (expression -> PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 10 (expression -> PLUS expression .) ]
+  ! MODULO          [ reduce using rule 10 (expression -> PLUS expression .) ]
+  ! EXPONENT        [ reduce using rule 10 (expression -> PLUS expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+
+
+state 17
+
+    (14) expression -> ID .
+
+    PLUS            reduce using rule 14 (expression -> ID .)
+    MINUS           reduce using rule 14 (expression -> ID .)
+    MULTIPLY        reduce using rule 14 (expression -> ID .)
+    DIVIDE          reduce using rule 14 (expression -> ID .)
+    MODULO          reduce using rule 14 (expression -> ID .)
+    EXPONENT        reduce using rule 14 (expression -> ID .)
+    $end            reduce using rule 14 (expression -> ID .)
+    RPAREN          reduce using rule 14 (expression -> ID .)
+
+
+state 18
+
+    (9) expression -> MINUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 9 (expression -> MINUS expression .)
+    MINUS           reduce using rule 9 (expression -> MINUS expression .)
+    $end            reduce using rule 9 (expression -> MINUS expression .)
+    RPAREN          reduce using rule 9 (expression -> MINUS expression .)
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+  ! MULTIPLY        [ reduce using rule 9 (expression -> MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 9 (expression -> MINUS expression .) ]
+  ! MODULO          [ reduce using rule 9 (expression -> MINUS expression .) ]
+  ! EXPONENT        [ reduce using rule 9 (expression -> MINUS expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+
+
+state 19
+
+    (11) expression -> LPAREN expression . RPAREN
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    RPAREN          shift and go to state 27
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+
+state 20
+
+    (1) statement -> ID ASSIGN expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    $end            reduce using rule 1 (statement -> ID ASSIGN expression .)
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+
+state 21
+
+    (3) expression -> expression PLUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 3 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 3 (expression -> expression PLUS expression .)
+    $end            reduce using rule 3 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 3 (expression -> expression PLUS expression .)
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+  ! MULTIPLY        [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! MODULO          [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! EXPONENT        [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+
+
+state 22
+
+    (4) expression -> expression MINUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 4 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 4 (expression -> expression MINUS expression .)
+    $end            reduce using rule 4 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 4 (expression -> expression MINUS expression .)
+    MULTIPLY        shift and go to state 12
+    DIVIDE          shift and go to state 13
+    MODULO          shift and go to state 14
+    EXPONENT        shift and go to state 15
+
+  ! MULTIPLY        [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! MODULO          [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! EXPONENT        [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+
+
+state 23
+
+    (5) expression -> expression MULTIPLY expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    MINUS           reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    MULTIPLY        reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    DIVIDE          reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    MODULO          reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    $end            reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    RPAREN          reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    EXPONENT        shift and go to state 15
+
+  ! EXPONENT        [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! MULTIPLY        [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! MODULO          [ shift and go to state 14 ]
+
+
+state 24
+
+    (6) expression -> expression DIVIDE expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MULTIPLY        reduce using rule 6 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MODULO          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    EXPONENT        shift and go to state 15
+
+  ! EXPONENT        [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! MULTIPLY        [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! MODULO          [ shift and go to state 14 ]
+
+
+state 25
+
+    (7) expression -> expression MODULO expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 7 (expression -> expression MODULO expression .)
+    MINUS           reduce using rule 7 (expression -> expression MODULO expression .)
+    MULTIPLY        reduce using rule 7 (expression -> expression MODULO expression .)
+    DIVIDE          reduce using rule 7 (expression -> expression MODULO expression .)
+    MODULO          reduce using rule 7 (expression -> expression MODULO expression .)
+    $end            reduce using rule 7 (expression -> expression MODULO expression .)
+    RPAREN          reduce using rule 7 (expression -> expression MODULO expression .)
+    EXPONENT        shift and go to state 15
+
+  ! EXPONENT        [ reduce using rule 7 (expression -> expression MODULO expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! MULTIPLY        [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! MODULO          [ shift and go to state 14 ]
+
+
+state 26
+
+    (8) expression -> expression EXPONENT expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . MODULO expression
+    (8) expression -> expression . EXPONENT expression
+
+    PLUS            reduce using rule 8 (expression -> expression EXPONENT expression .)
+    MINUS           reduce using rule 8 (expression -> expression EXPONENT expression .)
+    MULTIPLY        reduce using rule 8 (expression -> expression EXPONENT expression .)
+    DIVIDE          reduce using rule 8 (expression -> expression EXPONENT expression .)
+    MODULO          reduce using rule 8 (expression -> expression EXPONENT expression .)
+    $end            reduce using rule 8 (expression -> expression EXPONENT expression .)
+    RPAREN          reduce using rule 8 (expression -> expression EXPONENT expression .)
+    EXPONENT        shift and go to state 15
+
+  ! EXPONENT        [ reduce using rule 8 (expression -> expression EXPONENT expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! MULTIPLY        [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! MODULO          [ shift and go to state 14 ]
+
+
+state 27
+
+    (11) expression -> LPAREN expression RPAREN .
+
+    PLUS            reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    MULTIPLY        reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    MODULO          reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    EXPONENT        reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 11 (expression -> LPAREN expression RPAREN .)
+

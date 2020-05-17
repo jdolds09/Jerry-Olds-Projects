@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="safety" type="check_distance.py" name="safety" output="screen">
+
+    </node>
+</launch>

@@ -1,0 +1,8 @@
+Task 2: 
+How to build: g++ compute_a_posterioiri.cpp -o compute_a_posteriori
+How to run: ./compute_a_posteriori observations
+Example run: ./compute_a_posteriori CCCLLCLLLCLCLLCLCLLLC
+
+Task 4:
+How to build: g++ probabilities.cpp -o probabilities
+How to run ./probabilities

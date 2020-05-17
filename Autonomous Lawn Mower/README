@@ -1,0 +1,21 @@
+Download yolov3.weights for /CameraFeed/yolo-coco:
+wget https://pjreddie.com/media/files/yolov3.weights
+
+Setup in .bashrc example:
+
+# set up terminal for ROS
+export ROS_MASTER_URI=http://10.0.0.9:11311
+export ROS_IP=10.0.0.9
+
+# Tell ROS to execute our teleop node, not the default one
+source ~/Documents/senior-design-project/catkin_ws/devel/setup.bash
+
+CameraFeed Folder:
+
+Start SimpleHTTPServer as HTTPS with cert
+	- instructions: https://gist.github.com/dergachev/7028596
+
+TODO:
+	- get HTTP server to work with Aframe
+		- python -m SimpleHTTPServer 8080 works
+		- python3 httpServer.py does not work

@@ -1,0 +1,119 @@
+BLOCK (17)
+  ASSIGN 'a'
+    BINOP '|'
+      BINOP '&'
+        LITERAL 'INT', 0
+        LITERAL 'INT', 1
+      BINOP '&'
+        LITERAL 'INT', 0
+        LITERAL 'INT', 1
+  ASSIGN 'b'
+    BINOP '#'
+      BINOP '&'
+        LITERAL 'INT', 1
+        LITERAL 'INT', 1
+      BINOP '&'
+        LITERAL 'INT', 1
+        LITERAL 'INT', 1
+  ASSIGN 'c'
+    BINOP '#'
+      BINOP '#'
+        LITERAL 'INT', 1
+        BINOP '+'
+          LITERAL 'INT', 3
+          LITERAL 'INT', 5
+      LITERAL 'INT', 1
+  ASSIGN 'd'
+    BINOP '+'
+      BINOP '+'
+        LITERAL 'INT', 1
+        BINOP '*'
+          LITERAL 'INT', 2
+          LITERAL 'INT', 3
+      LITERAL 'INT', 4
+  ASSIGN 'f'
+    BINOP '-'
+      BINOP '-'
+        LITERAL 'INT', 1
+        BINOP '*'
+          LITERAL 'INT', 2
+          LITERAL 'INT', 3
+      LITERAL 'INT', 4
+  ASSIGN 'g'
+    BINOP '+'
+      BINOP '+'
+        LITERAL 'INT', 1
+        BINOP '/'
+          LITERAL 'INT', 4
+          LITERAL 'INT', 2
+      LITERAL 'INT', 3
+  ASSIGN 'h'
+    BINOP '-'
+      BINOP '-'
+        LITERAL 'INT', 1
+        BINOP '/'
+          LITERAL 'INT', 4
+          LITERAL 'INT', 2
+      LITERAL 'INT', 3
+  ASSIGN 'i'
+    BINOP '+'
+      BINOP '+'
+        LITERAL 'INT', 1
+        BINOP '%'
+          LITERAL 'INT', 5
+          LITERAL 'INT', 3
+      LITERAL 'INT', 2
+  ASSIGN 'j'
+    BINOP '-'
+      BINOP '-'
+        LITERAL 'INT', 8
+        BINOP '%'
+          LITERAL 'INT', 5
+          LITERAL 'INT', 4
+      LITERAL 'INT', 2
+  ASSIGN 'k'
+    BINOP '*'
+      BINOP '*'
+        LITERAL 'INT', 2
+        BINOP '^'
+          LITERAL 'INT', 3
+          LITERAL 'INT', 4
+      LITERAL 'INT', 5
+  ASSIGN 'l'
+    BINOP '/'
+      BINOP '/'
+        LITERAL 'INT', 128
+        BINOP '^'
+          LITERAL 'INT', 2
+          LITERAL 'INT', 6
+      LITERAL 'INT', 2
+  ASSIGN 'm'
+    BINOP '%'
+      BINOP '%'
+        LITERAL 'INT', 5
+        BINOP '^'
+          LITERAL 'INT', 3
+          LITERAL 'INT', 6
+      LITERAL 'INT', 2
+  ASSIGN 'n'
+    BINOP '^'
+      LITERAL 'INT', 2
+      UNOP '!'
+        LITERAL 'INT', 3
+  ASSIGN 'o'
+    BINOP '^'
+      LITERAL 'INT', 2
+      UNOP '$'
+        LITERAL 'INT', 36
+  ASSIGN 'p'
+    UNOP '-'
+      UNOP '!'
+        LITERAL 'REAL', 1.5
+  ASSIGN 'q'
+    UNOP '-'
+      UNOP '$'
+        LITERAL 'INT', 25
+  ASSIGN 'r'
+    UNOP '~'
+      UNOP '!'
+        LITERAL 'INT', 3
