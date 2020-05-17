@@ -1,1 +1,12 @@
-test
+Description:
+
+Database project that required building a website to run an animal shelter. The website had to keep a record of the following:
+All the animals currently at the animal shelter
+Information about the animals including type, breed, weight, and color
+All the transactions for the animal shelter including adoptions, donations, and likes
+Users that create accounts on the website both admin and non-admin
+All user specific transactions
+
+Requirements:
+
+MAMP must be downloaded and the htdocs folder located inside the MAMP folder must be replaced with the htdocs folder provided here.
