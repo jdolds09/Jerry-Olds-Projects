@@ -1,8 +1,0 @@
-========================================================================================
-Report      : ERROR
-Date        : Fri Nov 30 13:14:02 CST 2018
-Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.384592196 s.
-Node        : cse1325
-Process     : tsn <2133>
-Thread      : OSPL Lease Renew Thread 7fbe11a86700
-Internals   : V6.4.140320OSS/24b1387/24b1387/OpenSplice domain service/spliced.c/153/0/1543605242.915878474
