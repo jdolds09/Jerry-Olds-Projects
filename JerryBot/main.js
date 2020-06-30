@@ -1,9 +1,12 @@
 const fs = require('fs') // For file parsing
 const Discord = require('discord.js'); // For Discord functions
-const Client = require('./client/Client'); // To help with client related functions
+const Client = require('./classes/Client'); // To save commands
 
 // This is what must be put immediately before commands
 prefix = '!';
+
+// Servers variable so all servers aint playing same hangman game screwing it up
+var servers = {};
 
 // Declare command variale
 const client = new Client();
@@ -14,7 +17,6 @@ const music_command_files = fs.readdirSync('./commands/Music').filter(file => fi
 const misc_command_files = fs.readdirSync('./commands/Misc').filter(file => file.endsWith('.js'));
 const nsfw_command_files = fs.readdirSync('./commands/NSFW').filter(file => file.endsWith('.js'));
 const fun_command_files = fs.readdirSync('./commands/Fun').filter(file => file.endsWith('.js'));
-const help_command_file = fs.readdirSync('./commands').filter(file => 'help.js');
 
 // Set all music commands
 for (const file of music_command_files)
@@ -82,17 +84,34 @@ client.on('message', async message => {
 
     // Not a command so do nothing
 	if (message.author.bot) return;
-	if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) return;
+       
+    // Execute hangman command
+    if(commandName == "hangman")
+    {
+        try
+        {
+            command.execute(message, servers);
+        }
+        catch(error)
+        {
+            console.error(error);
+            message.reply('That command doesn\'t exist dumbass.');
+        }
+    }
 
-    // Execute the command
-    try 
+    // Execute all other commands
+    else
     {
-        command.execute(message);
-    } 
-    catch (error) 
-    {
-		console.error(error);
-		message.reply('That command doesn\'t exist dumbass.');
+        try 
+        {
+            command.execute(message);
+        } 
+        catch (error) 
+        {
+            console.error(error);
+            message.reply('That command doesn\'t exist dumbass.');
+        }
     }
 });
 
