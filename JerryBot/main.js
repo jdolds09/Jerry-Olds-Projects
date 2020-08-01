@@ -6,7 +6,8 @@ const Client = require('./classes/Client'); // To save commands
 prefix = '!';
 
 // Servers variable so all servers aint playing same hangman game screwing it up
-var servers = {};
+var servers = {}
+var users = {}
 
 // Declare command variale
 const client = new Client();
@@ -182,13 +183,79 @@ client.on('message', async message => {
 
     else
     {}
-    
-    // Tell Alex to fuck off if he says anything about JerryBot
+
     if(message.author.username == "ThatSaltySnipezGuy")
     {
-        if((msg.includes("jerry") && msg.includes("bot")) || msg.includes("@jerrybot"))
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
         {
             message.channel.send("Fuck you Alex :)");
+        }
+    }
+
+    if(message.author.username == "jdolds09")
+    {
+        if(((msg.includes("jerry") && msg.includes("bot"))) && msg.includes("thanks"))
+        {
+            message.channel.send("No problem my very intelligent and handsome creator. You are the best.");
+        }
+    }
+
+    if(message.author.username == "tguy")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("A wild Tguy has appeared!");
+            message.channel.send("Tguy uses Teleport!");
+            message.channel.send("Tguy got away!");
+        }
+    }
+
+    if(message.author.username == "Blueslyfox")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("Don't you have some hentai to watch you weeb?");
+        }
+    }
+
+    if(message.author.username == "a159159")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("Fun fact: Max has already drank 3 bottles of whiskey today :)");
+        }
+    }
+
+    if(message.author.username == "coyote")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("Jake according to my calculations, America is better than Canada.");
+        }
+    }
+
+    if(message.author.username == "KingKazma8292")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("", {files: ['./images/pride.gif']});
+        }
+    }
+
+    if(message.author.username == "Jab7red")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("Uh oh I must've pissed Jared off...");
+        }
+    }
+
+    if(message.author.username == "DrunkenMaster89")
+    {
+        if((msg.includes("jerry") && msg.includes("bot")) && !(msg.includes("!")))
+        {
+            message.channel.send("Because Aaron took the time to write this message instead of working, the entire Chili's franchise has gone bankrupt and will cease to exist. Nice going Aaron, nobody will ever enjoy chicken crispers ever again.");
+            message.channel.send("", {files: ['./images/aaron.gif']});
         }
     }
 
@@ -204,7 +271,7 @@ client.on('message', async message => {
     const command = client.commands.get(commandName);
 
     // Not a command so do nothing
-	if (message.author.bot) return;
+	if (message.author.bot && !(msg.includes("!roll"))) return;
     if (!message.content.startsWith(prefix)) return;
        
     // Execute hangman command
