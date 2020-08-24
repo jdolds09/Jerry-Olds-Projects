@@ -1,0 +1,6 @@
+## Interface: 11302
+## Title: SunderDetect
+## Author: Jerryatric (Supremacy-Whitemane)
+## Version: 1.0
+
+SunderDetect.lua
