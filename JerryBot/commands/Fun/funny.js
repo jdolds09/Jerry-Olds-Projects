@@ -2,15 +2,15 @@ const Images = require("dabi-images"); // Fetches images from Reddit
 const Client = new Images.Client(); // Helps get message from Reddit to discord channel
 const Discord = require("discord.js");
 
-// Yugioh command
+// Funny command
 module.exports = {
-	name: 'yugioh',
-	description: 'Post a picture of a yugioh card(s).',
+	name: 'funny',
+	description: 'Post a funny image or gif.',
     execute(message) 
     {
-        // Get yugioh card(s) image
-        Client.nsfw.real.yugioh().then(json => {
-            // Post yugioh card(s)
+        // Get image
+        Client.nsfw.real.funny().then(json => {
+            // Post image
             if(json.is_video)
                 {
                     const embed = new Discord.MessageEmbed()

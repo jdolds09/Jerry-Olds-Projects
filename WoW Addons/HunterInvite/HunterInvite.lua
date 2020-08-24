@@ -3,11 +3,17 @@ local WHOLE_MSG_TRIGGERS = { -- These will only match the whole message
 
 local PARTIAL_MSG_TRIGGERS = { -- These will match parts of the message
 "wtb buff",
+"wtb boof",
 "wtb trib",
 "wtb dm",
 "lf dmt",
 "lf buff",
-"lf trib"
+"lf trib",
+"lf dm buff",
+"lf dmn buff",
+"anyone selling buff",
+"anyone selling dm",
+"anyone selling trib"
 }
 
 local ipairs = ipairs
