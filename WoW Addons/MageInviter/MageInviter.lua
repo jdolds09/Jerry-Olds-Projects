@@ -3,16 +3,17 @@ local WHOLE_MSG_TRIGGERS = { -- These will only match the whole message
 "uc",
 "tb",
 "water",
-"food"
+"food",
+"port"
 }
 
 local PARTIAL_MSG_TRIGGERS = { -- These will match parts of the message
-"wtb port",
-"wtb water",
-"wtb org",
-"wtb tb",
-"wtb food",
-"wtb uc"
+"org",
+"uc",
+"tb",
+"food",
+"water",
+"port"
 }
 
 local ipairs = ipairs
@@ -25,8 +26,12 @@ for i, trigger in ipairs(WHOLE_MSG_TRIGGERS) do
 end
 
 local function isMatch(msg)
+	if(strfind(msg, "wtb")) then
+		msg = string.gsub(msg, "wtb", "");
+	end
+	
 	for _, trigger in ipairs(PARTIAL_MSG_TRIGGERS) do
-		if strfind(msg, trigger) then
+		if (strfind(msg, trigger) and not(strfind(msg, "sell")) and not(strfind(msg, "wts"))) then
 			return true
 		end
 	end

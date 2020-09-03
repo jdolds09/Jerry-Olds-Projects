@@ -34,6 +34,8 @@ local function isMatch(msg)
 				return false
 			elseif (strfind(msg, "summon") and not(SUMMON_ON)) then
 				return false
+			elseif (strfind(msg, "tribal")) then
+				return false
 			else
 				return true
 			end
@@ -78,8 +80,10 @@ SLASH_PORT1 = "/port"
 SlashCmdList.SUMMON = function(input)
 	if(SUMMON_ON) then
 		SUMMON_ON = false
+		print("Now inviting people looking for Summons!");
 	else
 		SUMMON_ON = true
+		print("Now inviting people looking for Ports!");
 	end
 end
 

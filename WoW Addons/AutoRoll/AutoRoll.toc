@@ -1,4 +1,1 @@
-#Author: Jerryatric
-#Version 1.0
-
 AutoRoll.lua
