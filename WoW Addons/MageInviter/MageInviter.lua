@@ -73,14 +73,12 @@ SlashCmdList.MAGEINVITE = function(input)
 	if (MAGEINVITER_ENABLED) then
 		MAGEINVITER_ENABLED = false;
 		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", filter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", filter)
 		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", filter)
 		print("MageInvite: Disabled")
 	else
 		MAGEINVITER_ENABLED = true;
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 		print("MageInvite: Enabled")

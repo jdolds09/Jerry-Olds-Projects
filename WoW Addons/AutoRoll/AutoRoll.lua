@@ -5,7 +5,11 @@ main:RegisterEvent("START_LOOT_ROLL");
 function main:START_LOOT_ROLL(rollID)
 	local _, name, _, _, _, canNeed, canGreed, canDisenchant, reasonNeed, reasonGreed, reasonDisenchant = GetLootRollItemInfo(rollID);
 
-    local items = {"Zulian Coin", "Razzashi Coin", "Hakkari Coin", "Sandfury Coin", "Skullsplitter Coin", "Bloodscalp Coin", "Gurubashi Coin", "Vilebranch Coin", "Witherbark Coin", "Red Hakkari Bijou", "Green Hakkari Bijou", "Blue Hakkari Bijou", "Purple Hakkari Bijou", "Bronze Hakkari Bijou", "Silver Hakkari Bijou", "Gold Hakkari Bijou", "Orange Hakkari Bijou", "Yellow Hakkari Bijou", "Bone Scarab", "Bronze Scarab", "Clay Scarab", "Crystal Scarab", "Gold Scarab", "Ivory Scarab", "Silver Scarab", "Stone Scarab"}
+    local items = {"Zulian Coin", "Razzashi Coin", "Hakkari Coin", "Sandfury Coin", "Skullsplitter Coin", 
+                   "Bloodscalp Coin", "Gurubashi Coin", "Vilebranch Coin", "Witherbark Coin", "Red Hakkari Bijou", 
+                   "Green Hakkari Bijou", "Blue Hakkari Bijou", "Purple Hakkari Bijou", "Bronze Hakkari Bijou", "Silver Hakkari Bijou", 
+                   "Gold Hakkari Bijou", "Orange Hakkari Bijou", "Yellow Hakkari Bijou", "Bone Scarab", "Bronze Scarab", "Clay Scarab", 
+                   "Crystal Scarab", "Gold Scarab", "Ivory Scarab", "Silver Scarab", "Stone Scarab"}
 
     if(canNeed) then
         for _,v in ipairs(items) do
