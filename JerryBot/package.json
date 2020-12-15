@@ -1,6 +1,6 @@
 {
   "name": "jerrybot",
-  "version": "1.8.4",
+  "version": "1.12.2",
   "description": "Discord bot to play music and display NSFW images",
   "main": "main.js",
   "scripts": {
@@ -9,12 +9,18 @@
   "author": "Jerry Olds",
   "license": "ISC",
   "dependencies": {
+    "@danclay/discord-dialogflow": "^1.0.2",
+    "apiai": "^4.0.3",
     "axios": "^0.19.2",
     "dabi-images": "^2.7.5",
+    "dialogflow": "^1.2.0",
     "discord.js": "^12.2.0",
+    "discorddialogflow": "^1.0.0",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.3",
     "give-me-a-joke": "^0.3.2",
+    "line-reader": "^0.4.0",
+    "nedb": "^1.8.0",
     "node-fetch": "^2.6.0",
     "one-liner-joke": "^1.2.0",
     "opusscript": "0.0.7",
@@ -23,8 +29,11 @@
     "random-jokes-gen": "0.0.1",
     "random-puppy": "^1.1.0",
     "random-words": "^1.1.1",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
     "simple-youtube-api": "^5.2.1",
     "snekfetch": "^4.0.4",
-    "ytdl-core": "^2.1.7"
+    "string-hash": "^1.1.3",
+    "ytdl-core": "^4.1.4"
   }
 }

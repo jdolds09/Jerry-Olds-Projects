@@ -10,7 +10,6 @@ module.exports = {
 		
 		// Get all commands
 		const music_commandFiles = fs.readdirSync('./commands/Music').filter(file => file.endsWith('.js'));
-		const nsfw_commandFiles = fs.readdirSync('./commands/NSFW').filter(file => file.endsWith('.js'));
 		const fun_commandFiles = fs.readdirSync('./commands/Fun').filter(file => file.endsWith('.js'));
 
 		// Add all music commands to output string
@@ -22,12 +21,6 @@ module.exports = {
 			str += `__**!${command.name} [number of songs to skip]**__: ${command.description} \n`;
 			else
 				str += `__**!${command.name}**__: ${command.description} \n`;
-		}
-
-		// Add all NSFW commands to output string
-		for (const file of nsfw_commandFiles) {
-			const command = require(`./NSFW/${file}`);
-			str += `__**!${command.name}**__: ${command.description} \n`;
 		}
 
 		// Add all fun commands to output string
